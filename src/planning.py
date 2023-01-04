@@ -101,7 +101,7 @@ class Toolpath(object):
         data['wait times'] = []
 
         for target in self.targets:
-            data['planes'].append(target.position)
+            data['planes'].append(rg.Plane(target.position, rg.Vector3d.XAxis, rg.Vector3d.YAxis))
             data['toggles'].append(target.shoot)
             data['wait times'].append(wait_time)
     
