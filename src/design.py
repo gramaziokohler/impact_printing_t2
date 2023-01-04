@@ -8,11 +8,9 @@ class GlobalDesign(object):
     """A global design class
 
     Attributes:
-        attr1 (str): Description of `attr1`.
-        attr2 (:obj:`int`, optional): Description of `attr2`.
-        attr3 (:obj:`list` of :obj:`str`): Description of `attr3`.
+        name (str): Name of the design.
+        layers (:obj:`list` of :obj:`Layer`): list of Layer objects.
 
-    TO DO: from curve method COMPAS that maintains class structure
     """
 
     def __init__(self, layers, name):

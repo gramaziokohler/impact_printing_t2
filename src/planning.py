@@ -42,6 +42,7 @@ class Toolpath(object):
         self.index = index
 
     def add_safety_points(self, type = None, setup = "Gantry"):
+        #Add safety height based on setup
         if setup != "Gantry":
             ABSOLUTE_Z_LIMIT = 250
         else:
@@ -49,9 +50,7 @@ class Toolpath(object):
         if self.targets == None:
             raise Exception("No valid toolpath, please add points before executing this function")
         start_safety_point = Target(rg.Point3d(self.targets[0].position.X, self.targets[0].position.Y, ABSOLUTE_Z_LIMIT), shoot = False, uid = self.targets[0].uid)
-        #uid for next point to be returned
         end_safety_point = Target(rg.Point3d(self.targets[-1].position.X, self.targets[-1].position.Y, ABSOLUTE_Z_LIMIT), shoot = False, uid = self.targets[-1].uid)
-        #uid for previous point ###################################
 
         if type == 0:
             self.targets.insert(0, start_safety_point)
