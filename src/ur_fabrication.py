@@ -8,7 +8,7 @@ ROBOT_IP = '192.168.10.20'
 
 class UR(object):
 
-    def __init__(self, way_planes, toggles, wait_times):
+    def __init__(self, way_planes, toggles, wait_times, ip = ROBOT_IP):
         """
         Class for communicating with robot
         Args:
