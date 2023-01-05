@@ -43,12 +43,17 @@ class UR(object):
     def rhino_planes_to_robot_planes(self):
         rhino_planes = self.way_planes
         for pl in rhino_planes:
-            pl = rg.Plane(rg.Point3d(pl.Origin[0],pl.Origin[1],pl.Origin[2]),rg.Vector3d(1,0,0),rg.Vector3d(0,1,0))
+            pl = rg.Plane(rg.Point3d(pl.Origin[0],pl.Origin[1],pl.Origin[2]),rg.Vector3d(0,-1,0),rg.Vector3d(1,0,0))
             robot_plane = rhino_to_robotbase(pl,self.robot_base)
             self.robot_frames.append(robot_plane)
 
-    def prepare_script(self):
+    def lift_planes_z(self, lift_height):
+        for plane in self.robot_frames:
+            plane.Translate(rg.Vector3d(0,0,lift_height))
+
+    def prepare_script(self, lift_height):
         self.rhino_planes_to_robot_planes()
+        self.lift_planes_z(lift_height)
         for i,(pl, toggle, wait) in enumerate(zip(self.robot_frames, self.toggles, self.wait_times)):
             self.script += move_l(pl,MAX_ACCEL, MAX_VELOCITY)
             self.script += sleep(0.5)
