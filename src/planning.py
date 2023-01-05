@@ -47,6 +47,7 @@ class Toolpath(object):
             ABSOLUTE_Z_LIMIT = 250
         else:
             ABSOLUTE_Z_LIMIT = 2100
+            
         if self.targets == None:
             raise Exception("No valid toolpath, please add points before executing this function")
         start_safety_point = Target(rg.Point3d(self.targets[0].position.X, self.targets[0].position.Y, ABSOLUTE_Z_LIMIT), shoot = False, uid = self.targets[0].uid)
