@@ -1,7 +1,8 @@
+
 import Rhino.Geometry as rg
 from compas import json_dumps
 
-ABSOLUTE_Z_LIMIT = 2000
+ABSOLUTE_Z_LIMIT = 2100
 
 class ConstructionSequencer(object):
     def __init__(self, design, toolpath_volume = 20):
@@ -10,8 +11,8 @@ class ConstructionSequencer(object):
         self.targets_flat = []
         self.toolpath_volume = toolpath_volume
 
-    def generate_toolpaths_continuous(self):
-        self.create_targets_from_design()
+    def generate_toolpaths_continuous(self, start_uid = None):
+        self.create_targets_from_design(start_uid)
         
         #create chunks from flat list of targets
         nested_chunks = list(split_list(self.targets_flat, self.toolpath_volume))
@@ -19,11 +20,21 @@ class ConstructionSequencer(object):
         for index, chunk in enumerate(nested_chunks):
             self.toolpaths.append(Toolpath(targets = chunk, index = index))
 
-    def create_targets_from_design(self):
-        for layer in self.design.layers:
-            for path in layer.paths:
-                for part in path.parts:
-                    self.targets_flat.append(Target.target_from_part(part))
+    def create_targets_from_design(self, start_uid):
+        if start_uid != None:
+            layer_index, path_index, part_index = start_uid.split("-")
+            layer_index, path_index, part_index = int(layer_index), int(path_index), int(part_index)
+        else:
+            layer_index, path_index, part_index = 0,0,0
+
+        for i,layer in enumerate(self.design.layers[layer_index:]):
+            for j,path in enumerate(layer.paths[path_index:]):
+                for k,part in enumerate(path.parts):
+                    if i==layer_index and j==path_index:
+                        if k>=part_index:
+                            self.targets_flat.append(Target.target_from_part(part))
+                    else:
+                        self.targets_flat.append(Target.target_from_part(part))
 
     def regenerate_toolpaths(self, uid):
         #TO DO: implement method for taking UID and generate next path
@@ -73,7 +84,7 @@ class Toolpath(object):
 
         if self.index > 0:
             next_uid = self.targets[0].uid
-            self.targets.insert(0,Target(pre_feeding_pt, next_uid))
+            self.targets.insert(0,Target(pre_feeding_pt, uid = next_uid))
 
     
     
@@ -117,7 +128,7 @@ class Toolpath(object):
 
 
 class Target(object):
-    def __init__(self, position, shoot = False,  extruder_speed = 25, belt_speed = 27, uid = None):
+    def __init__(self, position, shoot = False,  extruder_speed = 25, belt_speed = 27, uid = "00"):
         self.shoot = shoot
         self.part_size = 0.0
         self.time = 0.0
@@ -171,3 +182,16 @@ def format_target_for_ROS(target, index):
 def split_list(in_list, chunk_size):
   for i in range(0, len(in_list), chunk_size):
     yield in_list[i:i + chunk_size]
+
+def generate_feeding_from_current_pos(current_target, feeding_point):
+    pre_feeding_pt = feeding_point.Clone()
+    pre_feeding_pt.Z = ABSOLUTE_Z_LIMIT
+    safety_pos = Target(rg.Point3d(current_target.X, current_target.Y, ABSOLUTE_Z_LIMIT))
+    pre_feeding_pt = Target(pre_feeding_pt)
+    feeding_pt = Target(feeding_point)
+
+    toolpath = Toolpath([safety_pos, pre_feeding_pt, feeding_pt])
+
+    _, msgs = toolpath.export_toolpath_to_ROS()
+
+    return msgs
