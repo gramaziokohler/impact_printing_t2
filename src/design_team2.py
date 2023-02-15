@@ -68,7 +68,15 @@ class GlobalDesign(object):
                             path_index+=1
 
             elif wall_type=="Bifurcated":
+                
+
                 for i,p in enumerate(points):
+                    if index%2==0:
+                        if i==0 or i==2 or i==4 or i==len(points)-1 or i==len(points)-3 or  i==len(points)-5:
+                            continue
+                    else:
+                        if i==0 or i==1 or i==3 or i==5 or i==len(points)-2 or i==len(points)-4 or  i==len(points)-6 or i==len(points)-1:
+                            continue
                     h=(index*v_spacing)+base_height
                     if h<= heights[i]:
                         part_position = rg.Point3d(p.X,  p.Y, h)
