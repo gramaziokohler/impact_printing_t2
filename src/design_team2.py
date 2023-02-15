@@ -4,7 +4,7 @@ import Grasshopper as gh # https://pypi.org/project/Grasshopper-stubs/
 from compas.geometry import Curve, Point
 from ghpythonlib.treehelpers import list_to_tree as _tree
 from ghpythonlib.treehelpers import tree_to_list as _tl
-
+from copy import deepcopy
 
 class GlobalDesign(object):
     """A global design class
@@ -28,16 +28,19 @@ class GlobalDesign(object):
                     part.generate_uid(layer.index, path.index)
 
     @classmethod
-    def design_from_curve_with_Openings(cls,wall_type, points,openings, layers_num,v_spacing, b_list, heights, name = "defaultName", alternating=True, Safety=False, Support=False, below=True, Footer=False ):
+    def design_from_curve_with_Openings(cls,wall_type, points,openings, layers_num,v_spacing, b_list, heights, base_height, name = "defaultName", Buffer=False,alternating=True, Safety=False, Support=False, below=True, Footer=False ):
         layers = []
         cnt_footer=0
         points_in_open=0
+        if Buffer:
+            buffer_parts=[[]*len(openings)]
+            buffer_openings=openings
         for index in range(layers_num):
             parts=[]
             path_index=0
-            if wall_type== "Single_layer":
+            if wall_type== "Single_Layer":
                 for i,p in enumerate(points[index%2::2]):
-                    h=index*v_spacing
+                    h=(index*v_spacing)+base_height
                     if h<= heights[i]:
                         part_position = rg.Point3d(p.X,  p.Y, h)
                     else:
@@ -46,17 +49,27 @@ class GlobalDesign(object):
                     #check if it is part of an opening ////////////////////////////////////
                     part_inhole = PointInsideOpening(part_position, openings)
                     if part_inhole==False: 
+                        #check if it is part of the bufferzone     ////////////////////////
+                        if Buffer: 
+                            part_buffer, in_op= PointInsideBufferZone(part_position,openings)
+                        else:
+                            part_buffer=False
                         #check if it is part of the frame's support////////////////////////
                         part_support, f = IsPointSupport(part_position,openings)
-                        parts.append(Part(part_position,i, path_index, part_support))
+                        p=Part(part_position,i, path_index, part_support,part_buffer)
+                        if part_buffer:
+                            buffer_parts[in_op].append(p)
+                        else:
+                            parts.append(p)
                         points_in_open=0
                     else:
                         points_in_open+=1
                         if points_in_open==1:
                             path_index+=1
+
             elif wall_type=="Bifurcated":
                 for i,p in enumerate(points):
-                    h=index*v_spacing
+                    h=(index*v_spacing)+base_height
                     if h<= heights[i]:
                         part_position = rg.Point3d(p.X,  p.Y, h)
                     else:
@@ -72,24 +85,37 @@ class GlobalDesign(object):
                     #check if it is part of an opening ////////////////////////////////////
                     part_inhole = PointInsideOpening(part_position, openings)
                     if part_inhole==False: 
+                        #check if it is part of the bufferzone     ////////////////////////
+                        if Buffer: 
+                            part_buffer, in_op= PointInsideBufferZone(part_position,openings)
+                        else:
+                            part_buffer=False
                         #check if it is part of the frame's support////////////////////////
                         part_support, f = IsPointSupport(part_position,openings)
-                        parts.append(Part(part_position,i, path_index, part_support))
+                        p=Part(part_position,i, path_index, part_support,part_buffer)
+                        if part_buffer:
+                            buffer_parts[in_op].append(p)
+                        else:
+                            parts.append(p)
                         points_in_open=0
                     else:
                         points_in_open+=1
                         if points_in_open==1:
                             path_index+=1
-
             paths=[Path(parts)]
 
-            UpdateOpeningsStatus(index*v_spacing, openings)
+            insert_frameof=UpdateOpeningsStatus(h, openings)
             openings=UpdateOpenings(openings)
             highest=HighestFrame(openings)
+            new_layer= Layer(paths,index, highest,insert_frameof=insert_frameof, height=h)
+            layers.append(new_layer)
 
-            if Support:
-                    parts = AddSupport(curve, index, i, points, part_position,f,d, parts,  part_index)
-                    part_index+=2      
+        if Buffer: layers=InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing)
+        for lay in layers:
+            print "00", lay.Bufferof
+            # if Support:
+            #         parts = AddSupport(curve, index, i, points, part_position,f,d, parts,  part_index)
+            #         part_index+=2      
             # if index%2==1 and alternating:          #zig zag sequence
             #     if len(paths)!=1:
             #         paths.reverse()
@@ -99,7 +125,7 @@ class GlobalDesign(object):
             #     else:
             #         paths[0].parts.reverse()
             
-            new_layer= Layer(paths,index, highest)
+            
             
             #check if we are in the level of the footer ///////////
             # if Footer and IsFooterTime(index*default_layer_height, openings):
@@ -107,7 +133,7 @@ class GlobalDesign(object):
             #         new_layer.paths = [new_layer.LayerwithFooter()]
             #         cnt_footer+=1
             
-            layers.append(new_layer)
+            
             
         #for layer in layers:
             #for path in layer.paths:
@@ -133,17 +159,18 @@ class GlobalDesign(object):
 class Opening(object):
     """A class for each opening"""
     
-    def __init__(self,crv,wall_type, origin,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor, points, index=0):
+    def __init__(self,crv,wall_type, origin,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor, points, base_height=0, index=0):
         self.crv=crv
         self.initialorigin=origin
         self.h_sp=h_spacing
         self.v_sp= v_spacing
         self.factor = scale_factor
-        self.origin, self.b_index = self.AlignOrigin(points) # b_index is used only for the case of bifurcated
-        self.control_points = self.ControlPoints(sc_fac=self.factor+1)
+        self.origin, self.b_index = self.AlignOrigin(points,base_height) # b_index is used only for the case of bifurcated
+        self.control_points = self.ControlPoints(points)
         self.outline=rg.Polyline(self.control_points)
-        self.visline= rg.Polyline(self.ControlPoints())
+        self.visline= rg.Polyline(self.ControlPoints(points, False))
         self.brep = self.OpeningBrep( wall_type, lock_spacing, bifurcation_thickness)
+        self.buffer = self.OpeningBrep( wall_type, lock_spacing, bifurcation_thickness, True)
         self.index = index
         self.avoid_height=self.AvoidFrameHeight()
         
@@ -152,7 +179,7 @@ class Opening(object):
         self.column_index=((self.origin.Y- crv.PointAt(0).Y)/(self.h_sp/2))
         self.support=self.Support()
 
-    def AlignOrigin(self,points):
+    def AlignOrigin(self,points,base_height):
         pt= self.initialorigin.Clone()
         pt.Z=0
         closest_pts, closest_index= two_closest_points(pt, points)
@@ -167,7 +194,7 @@ class Opening(object):
             odd=closest_pts[0]
             odd_index=closest_index[0]
         newZ= round(self.initialorigin.Z/self.v_sp)* self.v_sp
-        pt.Z= newZ
+        pt.Z= newZ + base_height
         layer= (newZ/(self.v_sp)%2) # even (0) or odd (1) layer
         or_position= self.factor%2 # if origin point should be between two points (1) or not (0)
         if (layer+or_position)%2==0:
@@ -180,25 +207,40 @@ class Opening(object):
             cl_index=odd_index
         return pt, cl_index
         
-    def ControlPoints(self,sc_fac=0):
-        #to do: tangent
-        if sc_fac==0:
-            sc_fac=self.factor
-        pt0= rg.Point3d(self.origin.X,self.origin.Y -(self.h_sp*sc_fac)/2, self.origin.Z)
+    def ControlPoints(self,points, outline=True):
+        sc_fac= self.factor
+        if outline:
+            sc_fac+=0.6
+            temp0_Y= (points[self.b_index-int(self.factor)].Y +points[self.b_index-int(self.factor+1)].Y)/2
+            temp2_Y= (points[self.b_index+int(self.factor)].Y +points[self.b_index+int(self.factor+1)].Y)/2
+            pass
+        else:
+            temp0_Y= points[self.b_index-int(sc_fac)].Y
+            temp2_Y=points[self.b_index+int(sc_fac)].Y
+        
+        pt0= rg.Point3d(self.origin.X,temp0_Y, self.origin.Z)
         pt1= rg.Point3d(self.origin.X,self.origin.Y, self.origin.Z+(self.v_sp*sc_fac))
-        pt2= rg.Point3d(self.origin.X,self.origin.Y+(self.h_sp*sc_fac)/2, self.origin.Z)
+        pt2= rg.Point3d(self.origin.X,temp2_Y, self.origin.Z)
         pt3= rg.Point3d(self.origin.X,self.origin.Y, self.origin.Z-(self.v_sp*sc_fac))
         
         return [pt0, pt1, pt2, pt3, pt0]
         
-    def OpeningBrep(self, wall_type, lock_spacing, bifurcation_thickness):
+    def OpeningBrep(self, wall_type, lock_spacing, bifurcation_thickness, buffer=False):
         dist=100
+        
+        if buffer:
+            temp=self.outline.Duplicate().ToNurbsCurve()
+            line= temp.Offset(rg.Plane.WorldYZ, -50,0.001,rg.CurveOffsetCornerStyle(1))[0]
+        else:
+            line=self.outline
+
+
         if wall_type=="Bifurcated":
             dist += bifurcation_thickness+lock_spacing
         T= rg.Transform.Translation(rg.Vector3d.XAxis*dist)
-        temp1= self.outline.Duplicate().ToNurbsCurve()
+        temp1= line.Duplicate().ToNurbsCurve()
         temp1.Transform(T)
-        temp2= self.outline.Duplicate().ToNurbsCurve()
+        temp2= line.Duplicate().ToNurbsCurve()
         T1= rg.Transform.Translation(rg.Vector3d.XAxis*-dist)
         temp2.Transform(T1)
         
@@ -253,13 +295,14 @@ class Layer(object):
         height (:obj:`float`): Height in `mm` of the layer.
 
     """
-    def __init__(self, paths, index,FrameToAvoid=None, Footer=False, height = 40):
+    def __init__(self, paths, index,FrameToAvoid=None, Bufferof=None, Footer=False, insert_frameof=None, height = 40):
         self.paths = paths
         self.index = index
         self.height = height
-        self.insert_frame= False
+        self.insert_frameof= insert_frameof
         self.HasFooter=Footer
         self.FrameToAvoid=FrameToAvoid
+        self.Bufferof= Bufferof
         
     def LayerwithFooter(self):
         self.paths[0].parts.reverse()
@@ -311,13 +354,14 @@ class Part(object):
         index (:obj:`int`): Index of path within a layer.
         shoot (:obj:`bool`): Shooting on/off information.
     """
-    def __init__(self, position, index=0, path_index=None, layer_index=None,part_support=False, shoot = True):
+    def __init__(self, position, index=0, path_index=None, layer_index=None,part_support=False, part_buffer=False, shoot = True):
         self.position = position
         self.index = index
         self.shoot = shoot
         self.layer_index = layer_index
         self.path_index = path_index
         self.IsSupport= part_support
+        self.InBuffer= part_buffer
 
     def generate_uid(self, layer_index, path_index):#####?????????#########
         self.uid = "0%i-0%i-0%i"%(layer_index, path_index, self.index)
@@ -454,10 +498,10 @@ def Update_Number_Paths(Avoid,layers,end_part,paths, path):
         sub_paths.append(second_path)
     return sub_paths
 
-def create_Openings(crv,wall_type, origin,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor,points):
+def create_Openings(crv,wall_type, origin,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor,points, base_height=0):
     openings=[]
     for i, orig in enumerate (origin):
-        op= Opening(crv,wall_type, orig,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor[i],points,i)
+        op= Opening(crv,wall_type, orig,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor[i],points,base_height,i)
         openings.append(op)
     return openings
 
@@ -473,6 +517,20 @@ def PointInsideOpening(point, openings):
                 break
             
     return pointInhole
+
+def PointInsideBufferZone(point, openings):
+    """checks if a point is inside the bufferzone of any of the unplaced openings (status=0)
+    if true returns also the index of the opening"""
+    if len(openings)==0 : return False, None
+    pointInBuffer= False
+    op_index=None
+    for opening in openings:
+        if opening.status==0 and (point.Z<= opening.origin.Z) and (opening.buffer.IsPointInside(point, 0.00, True)):
+            pointInBuffer= True
+            op_index= opening.index
+            break
+            
+    return pointInBuffer,op_index
 
 def IsPointSupport(point,openings):
     if len(openings)==0 : return False, None
@@ -520,16 +578,19 @@ def AvoidFrames(avoid_opening,layers, paths, path):
         path.FrameToAvoid_End = avoid_opening
 
 def UpdateOpeningsStatus(built_height, openings):
-    if len(openings)==0 : return
+    if len(openings)==0 : return None
+    insert_frame=None
     for opening in openings:
         if opening.status==2:
             pass
         elif opening.status==1 and built_height> opening.Tip().Z:
             opening.status=2
+        elif opening.status==0 and built_height==opening.origin.Z:
+            insert_frame= opening
+            print ("Insert the frame for the opening no." + str(opening.index))
         elif opening.status==0 and built_height> opening.origin.Z:
             opening.status=1
-            #layer.insert_frame= True
-            print ("Insert the frame for the opening no." + str(opening.index))
+    return insert_frame
 
 def UpdateOpenings(openings):
     if len(openings)==0 : return []
@@ -559,4 +620,19 @@ def IsFooterTime(built_height, openings):
             if lowest< built_height-60:
                 return True
 
-
+def InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing):
+    buffer_layers=[]
+    print buffer_openings[0]
+    for i,parts in enumerate (buffer_parts):
+        b_paths=[Path(parts)]
+        layer= Layer(b_paths,0, Bufferof=buffer_openings[i],height=buffer_openings[i].origin.Z+v_spacing/2)
+        buffer_layers.append(layer)
+    
+    new_layers=[]
+    for i,lay in enumerate(layers):
+        new_layers.append(lay)
+        if  not lay.insert_frameof==None:
+            extra_lay = buffer_layers[lay.insert_frameof.index]
+            print extra_lay.Bufferof
+            new_layers.append(extra_lay)
+    return new_layers
