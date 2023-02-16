@@ -12,6 +12,7 @@ class ConstructionSequencer(object):
         self.toolpath_volume = toolpath_volume
 
     def generate_toolpaths_continuous(self, start_uid = None):
+        self.adjust_shooting_heights()
         self.create_targets_from_design(start_uid)
         
         #create chunks from flat list of targets
@@ -19,6 +20,20 @@ class ConstructionSequencer(object):
 
         for index, chunk in enumerate(nested_chunks):
             self.toolpaths.append(Toolpath(targets = chunk, index = index))
+
+    def adjust_shooting_heights(self):
+        for layer in (self.design.layers):
+            if not layer.Bufferof== None:
+                
+                new_Z= layer.Bufferof.origin.Z
+            elif not layer.FrameToAvoid==None:
+                new_Z= layer.FrameToAvoid.avoid_height
+            else:
+                continue
+            for path in (layer.paths):
+                for part in (path.parts):
+                    if part.shoot==True:
+                        part.position.Z=new_Z
 
     def create_targets_from_design(self, start_uid):
         if start_uid != None:

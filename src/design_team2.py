@@ -28,7 +28,8 @@ class GlobalDesign(object):
                     part.generate_uid(layer.index, path.index)
 
     @classmethod
-    def design_from_curve_with_Openings(cls,wall_type, points,openings, layers_num,v_spacing, b_list, heights, base_height, name = "defaultName", Buffer=False,alternating=True, Safety=False, Support=False, below=True, Footer=False ):
+    def design_from_curve_with_Openings(cls,wall_type, points,openings, layers_num,v_spacing, b_list, heights, base_height, footer_layer=0,name = "defaultName", Buffer=False,alternating=True, Safety=False, Support=False, below=True, Footer=False ):
+        alternating=True
         layers = []
         cnt_footer=0
         points_in_open=0
@@ -68,8 +69,6 @@ class GlobalDesign(object):
                             path_index+=1
 
             elif wall_type=="Bifurcated":
-                
-
                 for i,p in enumerate(points):
                     if index%2==0:
                         if i==0 or i==2 or i==4 or i==len(points)-1 or i==len(points)-3 or  i==len(points)-5:
@@ -110,42 +109,55 @@ class GlobalDesign(object):
                         points_in_open+=1
                         if points_in_open==1:
                             path_index+=1
+            
             paths=[Path(parts)]
 
             insert_frameof=UpdateOpeningsStatus(h, openings)
             openings=UpdateOpenings(openings)
             highest=HighestFrame(openings)
-            new_layer= Layer(paths,index, highest,insert_frameof=insert_frameof, height=h)
+
+            ########### UPDATE PATHS ########################
+            if highest!=None:
+                num_paths= path_index+1
+                list_parts=[]
+                for n in range(num_paths):
+                    list_parts.append([])
+                for p in parts:
+                    list_parts[p.path_index].append(p)
+                list_parts[-1].reverse()
+                new_paths=[]
+                for i, pat in enumerate(list_parts):
+                    new_paths.append(Path(pat,i))
+                paths=new_paths
+                
+            ########### FOOTER ##############################
+            foot=False
+            if index== footer_layer:
+                middle= int(round(len(parts)/2))
+                first_half=parts[:middle]
+                first_half.reverse()
+                second_half= parts[middle:]
+                num=12
+                new_parts=twolists(first_half[:num], second_half[:num])+first_half[num:]+second_half[num:]
+                paths=[Path(new_parts)]
+                foot=True
+
+            ########## ALTERNATING #########################
+            if index%2==1 and alternating and not foot:          #zig zag sequence
+                if len(paths)!=1 and highest!=None:
+                    paths.reverse()
+                else:
+                    paths[0].parts.reverse()
+            
+            
+            new_layer= Layer(paths,index, highest,Footer=foot,insert_frameof=insert_frameof, height=h)
             layers.append(new_layer)
 
-        if Buffer: layers=InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing)
-        for lay in layers:
-            print "00", lay.Bufferof
-            # if Support:
-            #         parts = AddSupport(curve, index, i, points, part_position,f,d, parts,  part_index)
-            #         part_index+=2      
-            # if index%2==1 and alternating:          #zig zag sequence
-            #     if len(paths)!=1:
-            #         paths.reverse()
-            #         if below and path.FrameToAvoid_Start==None:
-            #             for p in paths:
-            #                 p.parts.reverse()
-            #     else:
-            #         paths[0].parts.reverse()
-            
-            
-            
-            #check if we are in the level of the footer ///////////
-            # if Footer and IsFooterTime(index*default_layer_height, openings):
-            #     if cnt_footer<foo:
-            #         new_layer.paths = [new_layer.LayerwithFooter()]
-            #         cnt_footer+=1
-            
-            
-            
-        #for layer in layers:
-            #for path in layer.paths:
-                #print (layer.index,"/", path.index, "//",path.FrameToAvoid_Start, "//", path.FrameToAvoid_End)
+
+        if Buffer: 
+            new_layers=InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing)
+            layers=new_layers
+
         design = cls(layers, name)
 
         return design
@@ -221,7 +233,6 @@ class Opening(object):
             sc_fac+=0.6
             temp0_Y= (points[self.b_index-int(self.factor)].Y +points[self.b_index-int(self.factor+1)].Y)/2
             temp2_Y= (points[self.b_index+int(self.factor)].Y +points[self.b_index+int(self.factor+1)].Y)/2
-            pass
         else:
             temp0_Y= points[self.b_index-int(sc_fac)].Y
             temp2_Y=points[self.b_index+int(sc_fac)].Y
@@ -238,7 +249,7 @@ class Opening(object):
         
         if buffer:
             temp=self.outline.Duplicate().ToNurbsCurve()
-            line= temp.Offset(rg.Plane.WorldYZ, -50,0.001,rg.CurveOffsetCornerStyle(1))[0]
+            line= temp.Offset(rg.Plane.WorldYZ, -90,0.001,rg.CurveOffsetCornerStyle(1))[0]
         else:
             line=self.outline
 
@@ -308,7 +319,7 @@ class Layer(object):
         self.index = index
         self.height = height
         self.insert_frameof= insert_frameof
-        self.HasFooter=Footer
+        self.IsFooter=Footer
         self.FrameToAvoid=FrameToAvoid
         self.Bufferof= Bufferof
         
@@ -334,7 +345,7 @@ class Path(object):
         self.FrameToAvoid_Start=None
         self.FrameToAvoid_End= None
         
-        self.HasFooter= False
+        self.IsFooter= False
         self.safety_distance=50
         
     def AddSafetyPoints(self):
@@ -590,13 +601,13 @@ def UpdateOpeningsStatus(built_height, openings):
     insert_frame=None
     for opening in openings:
         if opening.status==2:
-            pass
+            continue
         elif opening.status==1 and built_height> opening.Tip().Z:
             opening.status=2
         elif opening.status==0 and built_height==opening.origin.Z:
             insert_frame= opening
             print ("Insert the frame for the opening no." + str(opening.index))
-        elif opening.status==0 and built_height> opening.origin.Z:
+        elif opening.status==0 and built_height>opening.origin.Z:
             opening.status=1
     return insert_frame
 
@@ -629,8 +640,14 @@ def IsFooterTime(built_height, openings):
                 return True
 
 def InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing):
+    #add safety point in the end of the Buffer Layer
+    print len(buffer_parts)
+    end_safety_point= deepcopy(buffer_parts[-1][-1])
+    end_safety_point.shoot=False
+    end_safety_point.position.Z=2100
+    buffer_parts[-1].append(end_safety_point)
+    print len(buffer_parts)
     buffer_layers=[]
-    print buffer_openings[0]
     for i,parts in enumerate (buffer_parts):
         b_paths=[Path(parts)]
         layer= Layer(b_paths,0, Bufferof=buffer_openings[i],height=buffer_openings[i].origin.Z+v_spacing/2)
@@ -641,6 +658,5 @@ def InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing):
         new_layers.append(lay)
         if  not lay.insert_frameof==None:
             extra_lay = buffer_layers[lay.insert_frameof.index]
-            print extra_lay.Bufferof
             new_layers.append(extra_lay)
     return new_layers
