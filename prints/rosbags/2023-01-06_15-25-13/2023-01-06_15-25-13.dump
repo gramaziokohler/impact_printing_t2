@@ -1,0 +1,10 @@
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_mabi_pc__36095: http://mabi-pc:36095/
+rosversion: '1.15.15
+
+  '
+run_id: ee9e2b02-8dcd-11ed-924c-d9c080e86647

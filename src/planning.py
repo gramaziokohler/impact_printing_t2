@@ -114,7 +114,7 @@ class Toolpath(object):
 
         for index,target in enumerate(self.targets):
             #new_point = {'position.z': z_coordinates_desired[i], 'position.y': y_coordinates_desired[i], 'positionx': x_coordinates_desired[i]}
-            new_pose =  format_target_for_ROS(target, index)
+            new_pose =  format_target_for_ROS(target, self.index)
             msg_dictionary['waypoints'].append(new_pose)
 
         jsonMsg = json_dumps(msg_dictionary)
