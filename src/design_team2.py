@@ -5,7 +5,7 @@ from compas.geometry import Curve, Point
 from ghpythonlib.treehelpers import list_to_tree as _tree
 from ghpythonlib.treehelpers import tree_to_list as _tl
 from copy import deepcopy
-
+import math
 class GlobalDesign(object):
     """A global design class
 
@@ -36,6 +36,8 @@ class GlobalDesign(object):
         if Buffer:
             buffer_parts=[[]*len(openings)]
             buffer_openings=openings
+        else:
+            buffer_parts=None
         for index in range(layers_num):
             parts=[]
             path_index=0
@@ -46,27 +48,8 @@ class GlobalDesign(object):
                         part_position = rg.Point3d(p.X,  p.Y, h)
                     else:
                         continue
-
-                    #check if it is part of an opening ////////////////////////////////////
-                    part_inhole = PointInsideOpening(part_position, openings)
-                    if part_inhole==False: 
-                        #check if it is part of the bufferzone     ////////////////////////
-                        if Buffer: 
-                            part_buffer, in_op= PointInsideBufferZone(part_position,openings)
-                        else:
-                            part_buffer=False
-                        #check if it is part of the frame's support////////////////////////
-                        part_support, f = IsPointSupport(part_position,openings)
-                        p=Part(part_position,i, path_index, part_support,part_buffer)
-                        if part_buffer:
-                            buffer_parts[in_op].append(p)
-                        else:
-                            parts.append(p)
-                        points_in_open=0
-                    else:
-                        points_in_open+=1
-                        if points_in_open==1:
-                            path_index+=1
+                    
+                    parts,buffer_parts, points_in_open, path_index= ChecksforPoint(part_position, openings,points_in_open, Buffer,i,path_index, parts,buffer_parts)
 
             elif wall_type=="Bifurcated":
                 for i,p in enumerate(points):
@@ -89,27 +72,26 @@ class GlobalDesign(object):
                         T=rg.Transform.Translation(vec*b_list[i]*-1)
                         part_position.Transform(T)
 
-                    #check if it is part of an opening ////////////////////////////////////
-                    part_inhole = PointInsideOpening(part_position, openings)
-                    if part_inhole==False: 
-                        #check if it is part of the bufferzone     ////////////////////////
-                        if Buffer: 
-                            part_buffer, in_op= PointInsideBufferZone(part_position,openings)
-                        else:
-                            part_buffer=False
-                        #check if it is part of the frame's support////////////////////////
-                        part_support, f = IsPointSupport(part_position,openings)
-                        p=Part(part_position,i, path_index, part_support,part_buffer)
-                        if part_buffer:
-                            buffer_parts[in_op].append(p)
-                        else:
-                            parts.append(p)
-                        points_in_open=0
-                    else:
-                        points_in_open+=1
-                        if points_in_open==1:
-                            path_index+=1
+                    parts,buffer_parts, points_in_open, path_index= ChecksforPoint(part_position, openings,points_in_open, Buffer,i,path_index, parts,buffer_parts)
             
+            elif wall_type=="Branched":
+                for i,p in enumerate(points):
+                    h=(index*v_spacing)+base_height
+                    if h<= heights[i]:
+                        part_position = rg.Point3d(p.X,  p.Y, h)
+                    else:
+                        continue
+                    vec=rg.Vector3d.XAxis
+                    if (i+index)%2==0 and not(b_list[i]==0):
+                        T= rg.Transform.Translation(vec*b_list[i])
+                        part_position.Transform(T)
+                    elif (i+index)%2==1 and not(i==0 or i==len(points)-1):
+                        pass
+                    else:
+                        continue
+
+                    parts,buffer_parts, points_in_open, path_index= ChecksforPoint(part_position, openings,points_in_open, Buffer,i,path_index, parts,buffer_parts)
+
             paths=[Path(parts)]
 
             insert_frameof=UpdateOpeningsStatus(h, openings)
@@ -253,21 +235,43 @@ class Opening(object):
         else:
             line=self.outline
 
-
-        if wall_type=="Bifurcated":
-            dist += bifurcation_thickness+lock_spacing
-        T= rg.Transform.Translation(rg.Vector3d.XAxis*dist)
+        T= rg.Transform.Translation(rg.Vector3d.XAxis*-dist)
         temp1= line.Duplicate().ToNurbsCurve()
         temp1.Transform(T)
-        temp2= line.Duplicate().ToNurbsCurve()
-        T1= rg.Transform.Translation(rg.Vector3d.XAxis*-dist)
-        temp2.Transform(T1)
+
+        T2= rg.Transform.Translation(rg.Vector3d.XAxis*2*dist)
+        temp2= temp1.Duplicate()
+        temp2.Transform(T2)
+
+        if wall_type=="Branched":
+            dist= bifurcation_thickness
+        elif wall_type=="Bifurcated":
+            dist+= bifurcation_thickness+lock_spacing
+        
+        
+        temp3= temp1.Duplicate()
+        opening_type=0
+        if opening_type==0:
+            d= math.sqrt((self.h_sp/2)**2+ self.v_sp**2)
+            off= temp3.Offset(rg.Plane.WorldYZ, d*1.5,0.001,rg.CurveOffsetCornerStyle(1))[0]
+            temp3=off
+            #T_m= rg.Transform.Translation(rg.Vector3d.ZAxis*4*self.v_sp)
+            #temp3.Transform(T_m)
+
+        T3= rg.Transform.Translation(rg.Vector3d.XAxis*dist)
+        temp3.Transform(T3)
+        if wall_type=="Branched":
+            dist=100
+
+        temp4=temp3.Duplicate()
+        T4= rg.Transform.Translation(rg.Vector3d.XAxis*2*dist)
+        temp4.Transform(T4)
         
         cap1= rg.Brep.CreatePlanarBreps(temp1)[0]
-        cap2= rg.Brep.CreatePlanarBreps(temp2)[0]
-        loft= rg.Brep.CreateFromLoft([temp1,temp2], rg.Point3d.Unset, rg.Point3d.Unset,0, False)[0]
+        cap2= rg.Brep.CreatePlanarBreps(temp4)[0]
+        loft= rg.Brep.CreateFromLoft([temp1,temp2, temp3, temp4], rg.Point3d.Unset, rg.Point3d.Unset,rg.LoftType.Straight, False)[0]
         cap_br= rg.Brep.CreateSolid([cap1,loft,cap2],0.001)[0]
-        
+
         return cap_br
         
     def Support(self):
@@ -520,7 +524,7 @@ def Update_Number_Paths(Avoid,layers,end_part,paths, path):
 def create_Openings(crv,wall_type, origin,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor,points, base_height=0):
     openings=[]
     for i, orig in enumerate (origin):
-        op= Opening(crv,wall_type, orig,h_spacing,v_spacing,lock_spacing,bifurcation_thickness, scale_factor[i],points,base_height,i)
+        op= Opening(crv,wall_type, orig,h_spacing,v_spacing,lock_spacing,bifurcation_thickness[i], scale_factor[i],points,base_height,i)
         openings.append(op)
     return openings
 
@@ -660,3 +664,27 @@ def InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing):
             extra_lay = buffer_layers[lay.insert_frameof.index]
             new_layers.append(extra_lay)
     return new_layers
+
+def ChecksforPoint(part_position, openings,points_in_open, Buffer,i,path_index, parts,buffer_parts):
+    #check if it is part of an opening ////////////////////////////////////
+    part_inhole = PointInsideOpening(part_position, openings)
+    if part_inhole==False: 
+        #check if it is part of the bufferzone     ////////////////////////
+        if Buffer: 
+            part_buffer, in_op= PointInsideBufferZone(part_position,openings)
+        else:
+            part_buffer=False
+        #check if it is part of the frame's support////////////////////////
+        part_support, f = IsPointSupport(part_position,openings)
+        p=Part(part_position,i, path_index, part_support,part_buffer)
+        if part_buffer:
+            buffer_parts[in_op].append(p)
+        else:
+            parts.append(p)
+        points_in_open=0
+    else:
+        points_in_open+=1
+        if points_in_open==1:
+            path_index+=1
+    
+    return parts,buffer_parts, points_in_open, path_index
