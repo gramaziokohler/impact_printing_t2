@@ -54,9 +54,11 @@ class GlobalDesign(object):
             elif wall_type=="Bifurcated":
                 for i,p in enumerate(points):
                     if index%2==0:
+                        pass
                         if i==0 or i==2 or i==4 or i==len(points)-1 or i==len(points)-3 or  i==len(points)-5:
                             continue
                     else:
+                        pass
                         if i==0 or i==1 or i==3 or i==5 or i==len(points)-2 or i==len(points)-4 or  i==len(points)-6 or i==len(points)-1:
                             continue
                     h=(index*v_spacing)+base_height
@@ -88,6 +90,7 @@ class GlobalDesign(object):
                     elif (i+index)%2==1 and not(i==0 or i==len(points)-1):
                         pass
                     else:
+                        pass
                         continue
 
                     parts,buffer_parts, points_in_open, path_index= ChecksforPoint(part_position, openings,points_in_open, Buffer,i,path_index, parts,buffer_parts)
@@ -114,15 +117,15 @@ class GlobalDesign(object):
                 
             ########### FOOTER ##############################
             foot=False
-            if index== footer_layer:
-                middle= int(round(len(parts)/2))
-                first_half=parts[:middle]
-                first_half.reverse()
-                second_half= parts[middle:]
-                num=12
-                new_parts=twolists(first_half[:num], second_half[:num])+first_half[num:]+second_half[num:]
-                paths=[Path(new_parts)]
-                foot=True
+            #if index== footer_layer:
+                #middle= int(round(len(parts)/2))
+                #first_half=parts[:middle]
+                #first_half.reverse()
+                #second_half= parts[middle:]
+                #num=12
+                #new_parts=twolists(first_half[:num], second_half[:num])+first_half[num:]+second_half[num:]
+                #paths=[Path(new_parts)]
+                #foot=True
 
             ########## ALTERNATING #########################
             if index%2==1 and alternating and not foot:          #zig zag sequence
@@ -244,13 +247,13 @@ class Opening(object):
         temp2.Transform(T2)
 
         if wall_type=="Branched":
-            dist= bifurcation_thickness
+            dist+= bifurcation_thickness
         elif wall_type=="Bifurcated":
             dist+= bifurcation_thickness+lock_spacing
         
         
         temp3= temp1.Duplicate()
-        opening_type=0
+        opening_type=1
         if opening_type==0:
             d= math.sqrt((self.h_sp/2)**2+ self.v_sp**2)
             off= temp3.Offset(rg.Plane.WorldYZ, d*1.5,0.001,rg.CurveOffsetCornerStyle(1))[0]
