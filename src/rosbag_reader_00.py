@@ -22,6 +22,7 @@ def read_rosbag():
         for connection, timestamp, rawdata in reader.messages(connections=connections):
             cdrdata = ros1_to_cdr(rawdata, topic.msgtype)
             msg = deserialize_cdr(cdrdata, topic.msgtype)
+            
             waypoints.append(msg)
 
     return waypoints
@@ -86,8 +87,9 @@ def write_rosbag_to_csv():
     waypts = read_rosbag()
     data = parse_waypoint_data(waypts)
 
+    
     df = pd.DataFrame.from_records(data)
-
+    print(df)
     with open(csv_path, 'w'):
         pd.DataFrame.to_csv(df, csv_path, ';', index=False)
 
@@ -97,6 +99,7 @@ if __name__ == "__main__":
     # define path of the recorded rosbag (.bag and .dump)
 
     path = os.path.join(os.getcwd(), "prints", "rosbags")
+    print(path)
 
     file_path = os.path.join(path, "2023-02-16_11-07-08", "2023-02-16_11-07-08.bag")
     csv_path = os.path.join(path, "2023-02-16_11-07-08", "2023-02-16_11-07-08.csv")
