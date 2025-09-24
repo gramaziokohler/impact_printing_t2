@@ -98,10 +98,10 @@ if __name__ == "__main__":
 
     path = os.path.join(os.getcwd(), "prints", "rosbags")
 
-    file_path = os.path.join(path, "2023-02-16_11-07-08", "2023-02-16_11-07-08.bag")
-    csv_path = os.path.join(path, "2023-02-16_11-07-08", "2023-02-16_11-07-08.csv")
+    file_path = os.path.join(path, "2023-03-03_08-59-43", "2023-03-03_08-59-43.bag")
+    csv_path = os.path.join(path, "2023-03-03_08-59-43", "2023-03-03_08-59-43.csv")
 
-    json_path = os.path.join(path, "2023-02-16_11-07-08", "2023-02-16_11-07-08.json")
+    json_path = os.path.join(path, "2023-03-03_08-59-43", "2023-03-03_08-59-43.json")
 
     write_rosbag_to_csv()
     write_rosbag_to_json()

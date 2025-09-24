@@ -15,9 +15,11 @@ class GlobalDesign(object):
 
     """
 
-    def __init__(self, layers, name):
+    def __init__(self, layers, name, reduce_mid_list=None, reduce_end_list=None):
 
         self.name = name
+        self.reduce_mid=reduce_mid_list
+        self.reduce_end=reduce_end_list
         if not layers == None:
             self.layers = layers
 
@@ -28,7 +30,7 @@ class GlobalDesign(object):
                     part.generate_uid(layer.index, path.index)
 
     @classmethod
-    def design_from_curve_with_Openings(cls,wall_type, points,openings, layers_num,v_spacing, b_list, heights, base_height, footer_layer=0,name = "defaultName", Buffer=False,alternating=True, Safety=False, Support=False, below=True, Footer=False ):
+    def design_from_curve_with_Openings(cls,wall_type, points,openings, layers_num,v_spacing, b_list, heights, base_height, footer_layer=0,name = "defaultName", Buffer=False, reduce_mid_list=None, reduce_end_list=None, alternating=True, Safety=False, Support=False, below=True, Footer=False ):
         alternating=True
         layers = []
         cnt_footer=0
@@ -143,10 +145,44 @@ class GlobalDesign(object):
             new_layers=InsertBufferLayers(layers,buffer_parts,buffer_openings, v_spacing)
             layers=new_layers
 
-        design = cls(layers, name)
+
+        design = cls(layers, name, reduce_mid_list,reduce_end_list)
 
         return design
 
+    def reduce_mid_pts(self):
+        if not self.reduce_mid==None:
+            pts=[]
+            for i in self.reduce_mid:
+                red_index=[26,27,28,29,30]
+                for j in red_index:
+                    if i%2==1: j-=1
+                    self.layers[i].paths[0].parts[j].shoot=False
+                    pts.append(self.layers[i].paths[0].parts[j].position)
+            return pts
+        else:
+            return None
+
+    def reduce_end_pts(self):
+        if not self.reduce_end==None:
+            pts=[]
+            for i in self.reduce_end:
+                red_index=[0,1,2,3]
+                if i%2==1: red_index=[0,1,2]
+                for j in red_index:
+                    if len(self.layers[i].paths)==1:
+                        self.layers[i].paths[0].parts[j].shoot=False
+                        pts.append(self.layers[i].paths[0].parts[j].position)
+                        self.layers[i].paths[0].parts[-(j+1)].shoot=False
+                        pts.append(self.layers[i].paths[0].parts[-(j+1)].position)
+                    else:
+                        self.layers[i].paths[0].parts[j].shoot=False
+                        pts.append(self.layers[i].paths[0].parts[j].position)
+                        self.layers[i].paths[1].parts[j].shoot=False
+                        pts.append(self.layers[i].paths[1].parts[j].position)
+            return pts
+        else:
+            return None
 
     def visualize(self):
         design_pts = []

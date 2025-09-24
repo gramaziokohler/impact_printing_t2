@@ -77,6 +77,7 @@ class Toolpath(object):
         if self.targets == None:
             raise Exception("No valid toolpath, please add points before executing this function")
         start_safety_point = Target(rg.Point3d(self.targets[0].position.X, self.targets[0].position.Y, ABSOLUTE_Z_LIMIT), shoot = False, uid = self.targets[0].uid)
+        midPoint = Target(rg.Point3d(self.targets[0].position.X, 9430, ABSOLUTE_Z_LIMIT), shoot = False, uid = self.targets[0].uid)
         end_safety_point = Target(rg.Point3d(self.targets[-1].position.X, self.targets[-1].position.Y, ABSOLUTE_Z_LIMIT), shoot = False, uid = self.targets[-1].uid)
 
         if type == 0:
@@ -85,7 +86,10 @@ class Toolpath(object):
             self.targets.append(end_safety_point)
         else:
             self.targets.insert(0, start_safety_point)
+            self.targets.insert(0,midPoint)
+            
             self.targets.append(end_safety_point)
+            self.targets.append(midPoint)
         
         print("Safety point added")
 

@@ -1,0 +1,2786 @@
+[
+    {
+        "identifier": "00-00-01",
+        "index": 0,
+        "shoot": 0,
+        "total time": 0.0
+    },
+    {
+        "identifier": "00-00-02",
+        "index": 1,
+        "shoot": 1,
+        "total time": 24.54773259162903
+    },
+    {
+        "identifier": "00-00-03",
+        "index": 2,
+        "shoot": 1,
+        "total time": 0.7449593544006348
+    },
+    {
+        "identifier": "00-00-04",
+        "index": 3,
+        "shoot": 1,
+        "total time": 3.430424928665161
+    },
+    {
+        "identifier": "00-00-05",
+        "index": 4,
+        "shoot": 1,
+        "total time": 2.013814687728882
+    },
+    {
+        "identifier": "00-00-06",
+        "index": 5,
+        "shoot": 1,
+        "total time": 0.7925183773040771
+    },
+    {
+        "identifier": "00-00-07",
+        "index": 6,
+        "shoot": 1,
+        "total time": 0.4825773239135742
+    },
+    {
+        "identifier": "00-00-08",
+        "index": 7,
+        "shoot": 1,
+        "total time": 1.2547922134399414
+    },
+    {
+        "identifier": "00-00-09",
+        "index": 8,
+        "shoot": 1,
+        "total time": 36.38079762458801
+    },
+    {
+        "identifier": "00-00-010",
+        "index": 9,
+        "shoot": 1,
+        "total time": 1.4723570346832275
+    },
+    {
+        "identifier": "00-00-011",
+        "index": 10,
+        "shoot": 1,
+        "total time": 1.7146708965301514
+    },
+    {
+        "identifier": "00-00-012",
+        "index": 11,
+        "shoot": 1,
+        "total time": 2.9209401607513428
+    },
+    {
+        "identifier": "00-00-013",
+        "index": 12,
+        "shoot": 1,
+        "total time": 1.7560224533081055
+    },
+    {
+        "identifier": "00-00-014",
+        "index": 13,
+        "shoot": 1,
+        "total time": 1.6069927215576172
+    },
+    {
+        "identifier": "00-00-015",
+        "index": 14,
+        "shoot": 1,
+        "total time": 1.6500358581542969
+    },
+    {
+        "identifier": "00-00-016",
+        "index": 15,
+        "shoot": 1,
+        "total time": 16.46147894859314
+    },
+    {
+        "identifier": "00-00-017",
+        "index": 16,
+        "shoot": 1,
+        "total time": 4.942617416381836
+    },
+    {
+        "identifier": "00-00-018",
+        "index": 17,
+        "shoot": 1,
+        "total time": 54.53443145751953
+    },
+    {
+        "identifier": "00-00-019",
+        "index": 18,
+        "shoot": 1,
+        "total time": 0.37751030921936035
+    },
+    {
+        "identifier": "00-00-020",
+        "index": 19,
+        "shoot": 1,
+        "total time": 0.40496301651000977
+    },
+    {
+        "identifier": "00-00-021",
+        "index": 20,
+        "shoot": 1,
+        "total time": 44.990904808044434
+    },
+    {
+        "identifier": "00-00-022",
+        "index": 21,
+        "shoot": 1,
+        "total time": 0.8304905891418457
+    },
+    {
+        "identifier": "00-00-023",
+        "index": 22,
+        "shoot": 1,
+        "total time": 0.47609829902648926
+    },
+    {
+        "identifier": "00-00-024",
+        "index": 23,
+        "shoot": 1,
+        "total time": 1.0712404251098633
+    },
+    {
+        "identifier": "00-00-025",
+        "index": 24,
+        "shoot": 1,
+        "total time": 0.9673762321472168
+    },
+    {
+        "identifier": "00-00-026",
+        "index": 25,
+        "shoot": 1,
+        "total time": 0.9832367897033691
+    },
+    {
+        "identifier": "00-00-027",
+        "index": 26,
+        "shoot": 1,
+        "total time": 2.756434440612793
+    },
+    {
+        "identifier": "00-00-028",
+        "index": 27,
+        "shoot": 1,
+        "total time": 1.6096668243408203
+    },
+    {
+        "identifier": "00-00-029",
+        "index": 28,
+        "shoot": 1,
+        "total time": 1.0287976264953613
+    },
+    {
+        "identifier": "00-00-030",
+        "index": 29,
+        "shoot": 1,
+        "total time": 1.5456197261810303
+    },
+    {
+        "identifier": "00-00-031",
+        "index": 30,
+        "shoot": 1,
+        "total time": 1.7138381004333496
+    },
+    {
+        "identifier": "00-00-032",
+        "index": 31,
+        "shoot": 1,
+        "total time": 1.3542838096618652
+    },
+    {
+        "identifier": "00-00-033",
+        "index": 32,
+        "shoot": 1,
+        "total time": 0.9576678276062012
+    },
+    {
+        "identifier": "00-00-034",
+        "index": 33,
+        "shoot": 1,
+        "total time": 0.9828288555145264
+    },
+    {
+        "identifier": "00-00-035",
+        "index": 34,
+        "shoot": 1,
+        "total time": 0.4994485378265381
+    },
+    {
+        "identifier": "00-00-036",
+        "index": 35,
+        "shoot": 1,
+        "total time": 0.5482168197631836
+    },
+    {
+        "identifier": "00-00-037",
+        "index": 36,
+        "shoot": 1,
+        "total time": 0.6230919361114502
+    },
+    {
+        "identifier": "00-00-038",
+        "index": 37,
+        "shoot": 1,
+        "total time": 0.47866010665893555
+    },
+    {
+        "identifier": "00-00-039",
+        "index": 38,
+        "shoot": 1,
+        "total time": 0.7208635807037354
+    },
+    {
+        "identifier": "00-00-040",
+        "index": 39,
+        "shoot": 1,
+        "total time": 2.1490073204040527
+    },
+    {
+        "identifier": "00-00-041",
+        "index": 40,
+        "shoot": 1,
+        "total time": 0.3954803943634033
+    },
+    {
+        "identifier": "00-00-042",
+        "index": 41,
+        "shoot": 1,
+        "total time": 15.337636709213257
+    },
+    {
+        "identifier": "00-00-043",
+        "index": 42,
+        "shoot": 1,
+        "total time": 5.521091461181641
+    },
+    {
+        "identifier": "00-00-044",
+        "index": 43,
+        "shoot": 1,
+        "total time": 16.12343454360962
+    },
+    {
+        "identifier": "00-00-045",
+        "index": 44,
+        "shoot": 1,
+        "total time": 17.338984489440918
+    },
+    {
+        "identifier": "00-00-046",
+        "index": 45,
+        "shoot": 1,
+        "total time": 2.0100793838500977
+    },
+    {
+        "identifier": "00-00-047",
+        "index": 46,
+        "shoot": 1,
+        "total time": 0.577195405960083
+    },
+    {
+        "identifier": "00-00-048",
+        "index": 47,
+        "shoot": 1,
+        "total time": 0.4936041831970215
+    },
+    {
+        "identifier": "00-00-049",
+        "index": 48,
+        "shoot": 1,
+        "total time": 0.6800236701965332
+    },
+    {
+        "identifier": "00-00-050",
+        "index": 49,
+        "shoot": 1,
+        "total time": 1.4733397960662842
+    },
+    {
+        "identifier": "00-00-051",
+        "index": 50,
+        "shoot": 1,
+        "total time": 4.737462520599365
+    },
+    {
+        "identifier": "00-00-052",
+        "index": 51,
+        "shoot": 1,
+        "total time": 1.5130524635314941
+    },
+    {
+        "identifier": "00-00-053",
+        "index": 52,
+        "shoot": 1,
+        "total time": 3.1851465702056885
+    },
+    {
+        "identifier": "00-00-054",
+        "index": 53,
+        "shoot": 1,
+        "total time": 2.9577953815460205
+    },
+    {
+        "identifier": "00-00-055",
+        "index": 54,
+        "shoot": 1,
+        "total time": 4.776845455169678
+    },
+    {
+        "identifier": "00-00-056",
+        "index": 55,
+        "shoot": 1,
+        "total time": 1.9276783466339111
+    },
+    {
+        "identifier": "00-00-057",
+        "index": 56,
+        "shoot": 1,
+        "total time": 4.425931453704834
+    },
+    {
+        "identifier": "00-00-01",
+        "index": 57,
+        "shoot": 1,
+        "total time": 5.134195327758789
+    },
+    {
+        "identifier": "00-00-02",
+        "index": 58,
+        "shoot": 1,
+        "total time": 8.03905439376831
+    },
+    {
+        "identifier": "00-00-03",
+        "index": 59,
+        "shoot": 1,
+        "total time": 6.996027708053589
+    },
+    {
+        "identifier": "00-00-04",
+        "index": 60,
+        "shoot": 1,
+        "total time": 6.344785928726196
+    },
+    {
+        "identifier": "00-00-05",
+        "index": 61,
+        "shoot": 1,
+        "total time": 6.7039103507995605
+    },
+    {
+        "identifier": "00-00-06",
+        "index": 62,
+        "shoot": 1,
+        "total time": 7.3624608516693115
+    },
+    {
+        "identifier": "00-00-07",
+        "index": 63,
+        "shoot": 1,
+        "total time": 8.205760478973389
+    },
+    {
+        "identifier": "00-00-08",
+        "index": 64,
+        "shoot": 1,
+        "total time": 6.915260314941406
+    },
+    {
+        "identifier": "00-00-09",
+        "index": 65,
+        "shoot": 1,
+        "total time": 7.7911481857299805
+    },
+    {
+        "identifier": "00-00-010",
+        "index": 66,
+        "shoot": 1,
+        "total time": 8.075309038162231
+    },
+    {
+        "identifier": "00-00-011",
+        "index": 67,
+        "shoot": 1,
+        "total time": 8.599321365356445
+    },
+    {
+        "identifier": "00-00-012",
+        "index": 68,
+        "shoot": 1,
+        "total time": 9.024747610092163
+    },
+    {
+        "identifier": "00-00-013",
+        "index": 69,
+        "shoot": 1,
+        "total time": 9.841710090637207
+    },
+    {
+        "identifier": "00-00-014",
+        "index": 70,
+        "shoot": 1,
+        "total time": 8.716546535491943
+    },
+    {
+        "identifier": "00-00-015",
+        "index": 71,
+        "shoot": 1,
+        "total time": 9.872790813446045
+    },
+    {
+        "identifier": "00-00-016",
+        "index": 72,
+        "shoot": 1,
+        "total time": 9.29208517074585
+    },
+    {
+        "identifier": "00-00-017",
+        "index": 73,
+        "shoot": 1,
+        "total time": 11.146881580352783
+    },
+    {
+        "identifier": "00-00-018",
+        "index": 74,
+        "shoot": 1,
+        "total time": 9.870995044708252
+    },
+    {
+        "identifier": "00-00-019",
+        "index": 75,
+        "shoot": 1,
+        "total time": 11.265692234039307
+    },
+    {
+        "identifier": "00-00-020",
+        "index": 76,
+        "shoot": 1,
+        "total time": 11.216242790222168
+    },
+    {
+        "identifier": "00-00-021",
+        "index": 77,
+        "shoot": 1,
+        "total time": 10.39814305305481
+    },
+    {
+        "identifier": "00-00-022",
+        "index": 78,
+        "shoot": 1,
+        "total time": 11.125447273254395
+    },
+    {
+        "identifier": "00-00-023",
+        "index": 79,
+        "shoot": 1,
+        "total time": 11.4040846824646
+    },
+    {
+        "identifier": "00-00-024",
+        "index": 80,
+        "shoot": 1,
+        "total time": 11.297301769256592
+    },
+    {
+        "identifier": "00-00-025",
+        "index": 81,
+        "shoot": 1,
+        "total time": 10.528514385223389
+    },
+    {
+        "identifier": "00-00-026",
+        "index": 82,
+        "shoot": 1,
+        "total time": 12.950775623321533
+    },
+    {
+        "identifier": "00-00-027",
+        "index": 83,
+        "shoot": 1,
+        "total time": 11.801209449768066
+    },
+    {
+        "identifier": "00-00-028",
+        "index": 84,
+        "shoot": 1,
+        "total time": 10.405389547348022
+    },
+    {
+        "identifier": "00-00-029",
+        "index": 85,
+        "shoot": 1,
+        "total time": 15.21230149269104
+    },
+    {
+        "identifier": "00-00-030",
+        "index": 86,
+        "shoot": 1,
+        "total time": 12.6423819065094
+    },
+    {
+        "identifier": "00-00-031",
+        "index": 87,
+        "shoot": 1,
+        "total time": 12.241287231445312
+    },
+    {
+        "identifier": "00-00-032",
+        "index": 88,
+        "shoot": 1,
+        "total time": 12.966563701629639
+    },
+    {
+        "identifier": "00-00-033",
+        "index": 89,
+        "shoot": 1,
+        "total time": 13.832731246948242
+    },
+    {
+        "identifier": "00-00-034",
+        "index": 90,
+        "shoot": 1,
+        "total time": 12.089336633682251
+    },
+    {
+        "identifier": "00-00-035",
+        "index": 91,
+        "shoot": 1,
+        "total time": 14.515649795532227
+    },
+    {
+        "identifier": "00-00-036",
+        "index": 92,
+        "shoot": 1,
+        "total time": 12.897945404052734
+    },
+    {
+        "identifier": "00-00-037",
+        "index": 93,
+        "shoot": 1,
+        "total time": 12.852645635604858
+    },
+    {
+        "identifier": "00-00-038",
+        "index": 94,
+        "shoot": 1,
+        "total time": 17.287763833999634
+    },
+    {
+        "identifier": "00-00-039",
+        "index": 95,
+        "shoot": 1,
+        "total time": 17.425246000289917
+    },
+    {
+        "identifier": "00-00-040",
+        "index": 96,
+        "shoot": 1,
+        "total time": 16.42069363594055
+    },
+    {
+        "identifier": "00-00-041",
+        "index": 97,
+        "shoot": 1,
+        "total time": 18.010587692260742
+    },
+    {
+        "identifier": "00-00-042",
+        "index": 98,
+        "shoot": 1,
+        "total time": 18.24477982521057
+    },
+    {
+        "identifier": "00-00-043",
+        "index": 99,
+        "shoot": 1,
+        "total time": 15.017295360565186
+    },
+    {
+        "identifier": "00-00-044",
+        "index": 100,
+        "shoot": 1,
+        "total time": 15.287903308868408
+    },
+    {
+        "identifier": "00-00-045",
+        "index": 101,
+        "shoot": 1,
+        "total time": 17.607969999313354
+    },
+    {
+        "identifier": "00-00-046",
+        "index": 102,
+        "shoot": 1,
+        "total time": 16.905838012695312
+    },
+    {
+        "identifier": "00-00-047",
+        "index": 103,
+        "shoot": 1,
+        "total time": 18.700711965560913
+    },
+    {
+        "identifier": "00-00-048",
+        "index": 104,
+        "shoot": 1,
+        "total time": 18.566364765167236
+    },
+    {
+        "identifier": "00-00-049",
+        "index": 105,
+        "shoot": 2,
+        "total time": 39.19610333442688
+    },
+    {
+        "identifier": "00-00-050",
+        "index": 106,
+        "shoot": 2,
+        "total time": 14.063074588775635
+    },
+    {
+        "identifier": "00-00-01",
+        "index": 107,
+        "shoot": 1,
+        "total time": 1.212188959121704
+    },
+    {
+        "identifier": "00-00-051",
+        "index": 108,
+        "shoot": 1,
+        "total time": 9.655952453613281e-05
+    },
+    {
+        "identifier": "00-00-052",
+        "index": 109,
+        "shoot": 1,
+        "total time": 7.115137338638306
+    },
+    {
+        "identifier": "00-00-053",
+        "index": 110,
+        "shoot": 1,
+        "total time": 5.258631706237793
+    },
+    {
+        "identifier": "00-00-054",
+        "index": 111,
+        "shoot": 1,
+        "total time": 5.477041482925415
+    },
+    {
+        "identifier": "00-00-055",
+        "index": 112,
+        "shoot": 1,
+        "total time": 6.056144952774048
+    },
+    {
+        "identifier": "00-00-056",
+        "index": 113,
+        "shoot": 1,
+        "total time": 5.688762664794922
+    },
+    {
+        "identifier": "00-00-057",
+        "index": 114,
+        "shoot": 1,
+        "total time": 6.533797979354858
+    },
+    {
+        "identifier": "01-00-056",
+        "index": 115,
+        "shoot": 1,
+        "total time": 6.332036733627319
+    },
+    {
+        "identifier": "01-00-055",
+        "index": 116,
+        "shoot": 1,
+        "total time": 6.458738803863525
+    },
+    {
+        "identifier": "01-00-054",
+        "index": 117,
+        "shoot": 1,
+        "total time": 6.576089859008789
+    },
+    {
+        "identifier": "01-00-053",
+        "index": 118,
+        "shoot": 1,
+        "total time": 6.545393228530884
+    },
+    {
+        "identifier": "01-00-052",
+        "index": 119,
+        "shoot": 1,
+        "total time": 6.263074636459351
+    },
+    {
+        "identifier": "01-00-051",
+        "index": 120,
+        "shoot": 1,
+        "total time": 7.0229268074035645
+    },
+    {
+        "identifier": "01-00-050",
+        "index": 121,
+        "shoot": 1,
+        "total time": 6.7227702140808105
+    },
+    {
+        "identifier": "01-00-049",
+        "index": 122,
+        "shoot": 1,
+        "total time": 7.077502012252808
+    },
+    {
+        "identifier": "01-00-048",
+        "index": 123,
+        "shoot": 1,
+        "total time": 6.854417562484741
+    },
+    {
+        "identifier": "01-00-047",
+        "index": 124,
+        "shoot": 1,
+        "total time": 6.789392709732056
+    },
+    {
+        "identifier": "01-00-046",
+        "index": 125,
+        "shoot": 1,
+        "total time": 7.072876453399658
+    },
+    {
+        "identifier": "01-00-045",
+        "index": 126,
+        "shoot": 1,
+        "total time": 7.649085521697998
+    },
+    {
+        "identifier": "01-00-044",
+        "index": 127,
+        "shoot": 1,
+        "total time": 8.009523868560791
+    },
+    {
+        "identifier": "01-00-043",
+        "index": 128,
+        "shoot": 1,
+        "total time": 6.925313472747803
+    },
+    {
+        "identifier": "01-00-042",
+        "index": 129,
+        "shoot": 1,
+        "total time": 13.795416116714478
+    },
+    {
+        "identifier": "01-00-041",
+        "index": 130,
+        "shoot": 1,
+        "total time": 7.6682353019714355
+    },
+    {
+        "identifier": "01-00-040",
+        "index": 131,
+        "shoot": 1,
+        "total time": 7.659926414489746
+    },
+    {
+        "identifier": "01-00-039",
+        "index": 132,
+        "shoot": 1,
+        "total time": 8.01169729232788
+    },
+    {
+        "identifier": "01-00-038",
+        "index": 133,
+        "shoot": 1,
+        "total time": 7.827254295349121
+    },
+    {
+        "identifier": "01-00-037",
+        "index": 134,
+        "shoot": 2,
+        "total time": 44.18346381187439
+    },
+    {
+        "identifier": "01-00-036",
+        "index": 135,
+        "shoot": 1,
+        "total time": 29.031896352767944
+    },
+    {
+        "identifier": "01-00-035",
+        "index": 136,
+        "shoot": 1,
+        "total time": 9.327640295028687
+    },
+    {
+        "identifier": "01-00-034",
+        "index": 137,
+        "shoot": 1,
+        "total time": 9.0142502784729
+    },
+    {
+        "identifier": "01-00-033",
+        "index": 138,
+        "shoot": 1,
+        "total time": 9.617686033248901
+    },
+    {
+        "identifier": "01-00-032",
+        "index": 139,
+        "shoot": 2,
+        "total time": 18.421417236328125
+    },
+    {
+        "identifier": "01-00-031",
+        "index": 140,
+        "shoot": 1,
+        "total time": 9.563093662261963
+    },
+    {
+        "identifier": "01-00-030",
+        "index": 141,
+        "shoot": 1,
+        "total time": 12.87105131149292
+    },
+    {
+        "identifier": "01-00-029",
+        "index": 142,
+        "shoot": 1,
+        "total time": 12.291226863861084
+    },
+    {
+        "identifier": "01-00-028",
+        "index": 143,
+        "shoot": 6,
+        "total time": 109.52560639381409
+    },
+    {
+        "identifier": "01-00-027",
+        "index": 144,
+        "shoot": 1,
+        "total time": 5.202396631240845
+    },
+    {
+        "identifier": "01-00-026",
+        "index": 145,
+        "shoot": 1,
+        "total time": 14.5675630569458
+    },
+    {
+        "identifier": "01-00-025",
+        "index": 146,
+        "shoot": 1,
+        "total time": 13.761066198348999
+    },
+    {
+        "identifier": "01-00-024",
+        "index": 147,
+        "shoot": 1,
+        "total time": 14.129838943481445
+    },
+    {
+        "identifier": "01-00-023",
+        "index": 148,
+        "shoot": 1,
+        "total time": 11.653400182723999
+    },
+    {
+        "identifier": "01-00-022",
+        "index": 149,
+        "shoot": 4,
+        "total time": 53.00450086593628
+    },
+    {
+        "identifier": "01-00-021",
+        "index": 150,
+        "shoot": 3,
+        "total time": 21.327677726745605
+    },
+    {
+        "identifier": "01-00-020",
+        "index": 151,
+        "shoot": 1,
+        "total time": 14.638438940048218
+    },
+    {
+        "identifier": "01-00-019",
+        "index": 152,
+        "shoot": 1,
+        "total time": 16.074555158615112
+    },
+    {
+        "identifier": "01-00-018",
+        "index": 153,
+        "shoot": 1,
+        "total time": 19.721221208572388
+    },
+    {
+        "identifier": "01-00-017",
+        "index": 154,
+        "shoot": 1,
+        "total time": 17.983675956726074
+    },
+    {
+        "identifier": "01-00-016",
+        "index": 155,
+        "shoot": 1,
+        "total time": 14.746955394744873
+    },
+    {
+        "identifier": "01-00-015",
+        "index": 156,
+        "shoot": 1,
+        "total time": 15.146361589431763
+    },
+    {
+        "identifier": "01-00-014",
+        "index": 157,
+        "shoot": 1,
+        "total time": 15.549299478530884
+    },
+    {
+        "identifier": "00-00-051",
+        "index": 158,
+        "shoot": 1,
+        "total time": 2.733428716659546
+    },
+    {
+        "identifier": "01-00-013",
+        "index": 159,
+        "shoot": 1,
+        "total time": 4.029273986816406e-05
+    },
+    {
+        "identifier": "01-00-012",
+        "index": 160,
+        "shoot": 1,
+        "total time": 7.109860897064209
+    },
+    {
+        "identifier": "01-00-011",
+        "index": 161,
+        "shoot": 1,
+        "total time": 5.011027097702026
+    },
+    {
+        "identifier": "01-00-010",
+        "index": 162,
+        "shoot": 1,
+        "total time": 6.788379430770874
+    },
+    {
+        "identifier": "01-00-09",
+        "index": 163,
+        "shoot": 1,
+        "total time": 5.612850666046143
+    },
+    {
+        "identifier": "01-00-08",
+        "index": 164,
+        "shoot": 1,
+        "total time": 5.670918226242065
+    },
+    {
+        "identifier": "01-00-07",
+        "index": 165,
+        "shoot": 1,
+        "total time": 5.635014057159424
+    },
+    {
+        "identifier": "01-00-06",
+        "index": 166,
+        "shoot": 1,
+        "total time": 5.7072062492370605
+    },
+    {
+        "identifier": "01-00-05",
+        "index": 167,
+        "shoot": 1,
+        "total time": 5.647317886352539
+    },
+    {
+        "identifier": "01-00-04",
+        "index": 168,
+        "shoot": 1,
+        "total time": 5.643628120422363
+    },
+    {
+        "identifier": "01-00-03",
+        "index": 169,
+        "shoot": 1,
+        "total time": 8.06112813949585
+    },
+    {
+        "identifier": "01-00-02",
+        "index": 170,
+        "shoot": 1,
+        "total time": 6.81365442276001
+    },
+    {
+        "identifier": "02-00-01",
+        "index": 171,
+        "shoot": 1,
+        "total time": 5.936806917190552
+    },
+    {
+        "identifier": "02-00-02",
+        "index": 172,
+        "shoot": 1,
+        "total time": 6.113970756530762
+    },
+    {
+        "identifier": "02-00-03",
+        "index": 173,
+        "shoot": 1,
+        "total time": 6.312021493911743
+    },
+    {
+        "identifier": "02-00-04",
+        "index": 174,
+        "shoot": 1,
+        "total time": 6.495895624160767
+    },
+    {
+        "identifier": "02-00-05",
+        "index": 175,
+        "shoot": 1,
+        "total time": 7.0606606006622314
+    },
+    {
+        "identifier": "02-00-06",
+        "index": 176,
+        "shoot": 7,
+        "total time": 132.98194885253906
+    },
+    {
+        "identifier": "02-00-07",
+        "index": 177,
+        "shoot": 3,
+        "total time": 18.141757488250732
+    },
+    {
+        "identifier": "02-00-08",
+        "index": 178,
+        "shoot": 3,
+        "total time": 18.846234560012817
+    },
+    {
+        "identifier": "02-00-09",
+        "index": 179,
+        "shoot": 1,
+        "total time": 6.499348163604736
+    },
+    {
+        "identifier": "02-00-010",
+        "index": 180,
+        "shoot": 1,
+        "total time": 7.496572732925415
+    },
+    {
+        "identifier": "02-00-011",
+        "index": 181,
+        "shoot": 1,
+        "total time": 12.20754861831665
+    },
+    {
+        "identifier": "02-00-012",
+        "index": 182,
+        "shoot": 3,
+        "total time": 23.53065586090088
+    },
+    {
+        "identifier": "02-00-013",
+        "index": 183,
+        "shoot": 1,
+        "total time": 8.001662015914917
+    },
+    {
+        "identifier": "02-00-014",
+        "index": 184,
+        "shoot": 1,
+        "total time": 9.911257028579712
+    },
+    {
+        "identifier": "02-00-015",
+        "index": 185,
+        "shoot": 1,
+        "total time": 6.17994499206543
+    },
+    {
+        "identifier": "02-00-016",
+        "index": 186,
+        "shoot": 1,
+        "total time": 9.05417251586914
+    },
+    {
+        "identifier": "02-00-017",
+        "index": 187,
+        "shoot": 1,
+        "total time": 6.314896106719971
+    },
+    {
+        "identifier": "02-00-018",
+        "index": 188,
+        "shoot": 1,
+        "total time": 7.464834451675415
+    },
+    {
+        "identifier": "02-00-019",
+        "index": 189,
+        "shoot": 1,
+        "total time": 6.729451656341553
+    },
+    {
+        "identifier": "02-00-020",
+        "index": 190,
+        "shoot": 1,
+        "total time": 8.806253671646118
+    },
+    {
+        "identifier": "02-00-021",
+        "index": 191,
+        "shoot": 1,
+        "total time": 6.613207101821899
+    },
+    {
+        "identifier": "02-00-022",
+        "index": 192,
+        "shoot": 1,
+        "total time": 7.980562925338745
+    },
+    {
+        "identifier": "02-00-023",
+        "index": 193,
+        "shoot": 1,
+        "total time": 7.522532939910889
+    },
+    {
+        "identifier": "02-00-024",
+        "index": 194,
+        "shoot": 1,
+        "total time": 8.922321796417236
+    },
+    {
+        "identifier": "02-00-025",
+        "index": 195,
+        "shoot": 1,
+        "total time": 8.220755815505981
+    },
+    {
+        "identifier": "02-00-026",
+        "index": 196,
+        "shoot": 1,
+        "total time": 8.674437999725342
+    },
+    {
+        "identifier": "02-00-027",
+        "index": 197,
+        "shoot": 1,
+        "total time": 12.026875972747803
+    },
+    {
+        "identifier": "02-00-028",
+        "index": 198,
+        "shoot": 1,
+        "total time": 8.590993404388428
+    },
+    {
+        "identifier": "02-00-029",
+        "index": 199,
+        "shoot": 1,
+        "total time": 8.932775259017944
+    },
+    {
+        "identifier": "02-00-030",
+        "index": 200,
+        "shoot": 1,
+        "total time": 12.64266848564148
+    },
+    {
+        "identifier": "02-00-031",
+        "index": 201,
+        "shoot": 1,
+        "total time": 10.926318645477295
+    },
+    {
+        "identifier": "02-00-032",
+        "index": 202,
+        "shoot": 1,
+        "total time": 11.99071455001831
+    },
+    {
+        "identifier": "02-00-033",
+        "index": 203,
+        "shoot": 1,
+        "total time": 10.601675271987915
+    },
+    {
+        "identifier": "02-00-034",
+        "index": 204,
+        "shoot": 1,
+        "total time": 11.301965713500977
+    },
+    {
+        "identifier": "02-00-035",
+        "index": 205,
+        "shoot": 1,
+        "total time": 13.875918865203857
+    },
+    {
+        "identifier": "02-00-036",
+        "index": 206,
+        "shoot": 1,
+        "total time": 13.549157619476318
+    },
+    {
+        "identifier": "02-00-037",
+        "index": 207,
+        "shoot": 1,
+        "total time": 11.079513788223267
+    },
+    {
+        "identifier": "02-00-038",
+        "index": 208,
+        "shoot": 1,
+        "total time": 13.623506546020508
+    },
+    {
+        "identifier": "01-00-013",
+        "index": 209,
+        "shoot": 1,
+        "total time": 1.0244412422180176
+    },
+    {
+        "identifier": "02-00-039",
+        "index": 210,
+        "shoot": 1,
+        "total time": 7.653236389160156e-05
+    },
+    {
+        "identifier": "02-00-040",
+        "index": 211,
+        "shoot": 1,
+        "total time": 4.402262926101685
+    },
+    {
+        "identifier": "02-00-041",
+        "index": 212,
+        "shoot": 1,
+        "total time": 3.6639180183410645
+    },
+    {
+        "identifier": "02-00-042",
+        "index": 213,
+        "shoot": 1,
+        "total time": 5.344017028808594
+    },
+    {
+        "identifier": "02-00-043",
+        "index": 214,
+        "shoot": 1,
+        "total time": 5.123399257659912
+    },
+    {
+        "identifier": "02-00-044",
+        "index": 215,
+        "shoot": 1,
+        "total time": 4.8170716762542725
+    },
+    {
+        "identifier": "02-00-045",
+        "index": 216,
+        "shoot": 1,
+        "total time": 4.972991943359375
+    },
+    {
+        "identifier": "02-00-046",
+        "index": 217,
+        "shoot": 1,
+        "total time": 5.302870273590088
+    },
+    {
+        "identifier": "02-00-047",
+        "index": 218,
+        "shoot": 1,
+        "total time": 5.473501205444336
+    },
+    {
+        "identifier": "02-00-048",
+        "index": 219,
+        "shoot": 1,
+        "total time": 5.448833465576172
+    },
+    {
+        "identifier": "02-00-049",
+        "index": 220,
+        "shoot": 1,
+        "total time": 5.032855749130249
+    },
+    {
+        "identifier": "02-00-050",
+        "index": 221,
+        "shoot": 1,
+        "total time": 4.8473289012908936
+    },
+    {
+        "identifier": "02-00-051",
+        "index": 222,
+        "shoot": 1,
+        "total time": 5.431857347488403
+    },
+    {
+        "identifier": "02-00-052",
+        "index": 223,
+        "shoot": 1,
+        "total time": 5.196239948272705
+    },
+    {
+        "identifier": "02-00-053",
+        "index": 224,
+        "shoot": 1,
+        "total time": 6.069894075393677
+    },
+    {
+        "identifier": "02-00-054",
+        "index": 225,
+        "shoot": 1,
+        "total time": 5.463128089904785
+    },
+    {
+        "identifier": "02-00-055",
+        "index": 226,
+        "shoot": 1,
+        "total time": 5.250039339065552
+    },
+    {
+        "identifier": "02-00-056",
+        "index": 227,
+        "shoot": 1,
+        "total time": 5.125213623046875
+    },
+    {
+        "identifier": "02-00-057",
+        "index": 228,
+        "shoot": 1,
+        "total time": 6.559787750244141
+    },
+    {
+        "identifier": "03-00-056",
+        "index": 229,
+        "shoot": 1,
+        "total time": 6.44309663772583
+    },
+    {
+        "identifier": "03-00-055",
+        "index": 230,
+        "shoot": 1,
+        "total time": 6.905803680419922
+    },
+    {
+        "identifier": "03-00-054",
+        "index": 231,
+        "shoot": 1,
+        "total time": 5.436487913131714
+    },
+    {
+        "identifier": "03-00-053",
+        "index": 232,
+        "shoot": 1,
+        "total time": 6.846880674362183
+    },
+    {
+        "identifier": "03-00-052",
+        "index": 233,
+        "shoot": 1,
+        "total time": 8.366649627685547
+    },
+    {
+        "identifier": "03-00-051",
+        "index": 234,
+        "shoot": 1,
+        "total time": 6.584146738052368
+    },
+    {
+        "identifier": "03-00-050",
+        "index": 235,
+        "shoot": 1,
+        "total time": 6.152640342712402
+    },
+    {
+        "identifier": "03-00-049",
+        "index": 236,
+        "shoot": 1,
+        "total time": 5.829241752624512
+    },
+    {
+        "identifier": "03-00-048",
+        "index": 237,
+        "shoot": 1,
+        "total time": 5.366166830062866
+    },
+    {
+        "identifier": "03-00-047",
+        "index": 238,
+        "shoot": 1,
+        "total time": 6.826505184173584
+    },
+    {
+        "identifier": "03-00-046",
+        "index": 239,
+        "shoot": 1,
+        "total time": 9.585370540618896
+    },
+    {
+        "identifier": "03-00-045",
+        "index": 240,
+        "shoot": 1,
+        "total time": 8.813344478607178
+    },
+    {
+        "identifier": "03-00-044",
+        "index": 241,
+        "shoot": 1,
+        "total time": 34.966840744018555
+    },
+    {
+        "identifier": "03-00-043",
+        "index": 242,
+        "shoot": 1,
+        "total time": 5.708137512207031
+    },
+    {
+        "identifier": "03-00-042",
+        "index": 243,
+        "shoot": 1,
+        "total time": 5.882517099380493
+    },
+    {
+        "identifier": "03-00-041",
+        "index": 244,
+        "shoot": 1,
+        "total time": 6.01323127746582
+    },
+    {
+        "identifier": "03-00-040",
+        "index": 245,
+        "shoot": 1,
+        "total time": 6.457557439804077
+    },
+    {
+        "identifier": "03-00-039",
+        "index": 246,
+        "shoot": 1,
+        "total time": 6.662456035614014
+    },
+    {
+        "identifier": "03-00-038",
+        "index": 247,
+        "shoot": 1,
+        "total time": 6.555405139923096
+    },
+    {
+        "identifier": "03-00-037",
+        "index": 248,
+        "shoot": 1,
+        "total time": 8.697618246078491
+    },
+    {
+        "identifier": "03-00-036",
+        "index": 249,
+        "shoot": 1,
+        "total time": 6.7748703956604
+    },
+    {
+        "identifier": "03-00-035",
+        "index": 250,
+        "shoot": 1,
+        "total time": 7.935478687286377
+    },
+    {
+        "identifier": "03-00-034",
+        "index": 251,
+        "shoot": 1,
+        "total time": 7.698606252670288
+    },
+    {
+        "identifier": "03-00-033",
+        "index": 252,
+        "shoot": 1,
+        "total time": 8.065464735031128
+    },
+    {
+        "identifier": "03-00-032",
+        "index": 253,
+        "shoot": 1,
+        "total time": 9.41281533241272
+    },
+    {
+        "identifier": "03-00-031",
+        "index": 254,
+        "shoot": 1,
+        "total time": 8.513804912567139
+    },
+    {
+        "identifier": "03-00-030",
+        "index": 255,
+        "shoot": 1,
+        "total time": 11.151789426803589
+    },
+    {
+        "identifier": "03-00-029",
+        "index": 256,
+        "shoot": 1,
+        "total time": 32.50304293632507
+    },
+    {
+        "identifier": "03-00-028",
+        "index": 257,
+        "shoot": 1,
+        "total time": 9.558069944381714
+    },
+    {
+        "identifier": "03-00-027",
+        "index": 258,
+        "shoot": 1,
+        "total time": 12.12196159362793
+    },
+    {
+        "identifier": "03-00-026",
+        "index": 259,
+        "shoot": 1,
+        "total time": 11.224354982376099
+    },
+    {
+        "identifier": "02-00-039",
+        "index": 260,
+        "shoot": 1,
+        "total time": 1.7718982696533203
+    },
+    {
+        "identifier": "03-00-025",
+        "index": 261,
+        "shoot": 1,
+        "total time": 9.632110595703125e-05
+    },
+    {
+        "identifier": "03-00-024",
+        "index": 262,
+        "shoot": 1,
+        "total time": 10.097384691238403
+    },
+    {
+        "identifier": "03-00-023",
+        "index": 263,
+        "shoot": 2,
+        "total time": 13.893511533737183
+    },
+    {
+        "identifier": "03-00-022",
+        "index": 264,
+        "shoot": 1,
+        "total time": 5.6713502407073975
+    },
+    {
+        "identifier": "03-00-021",
+        "index": 265,
+        "shoot": 1,
+        "total time": 10.534042358398438
+    },
+    {
+        "identifier": "03-00-020",
+        "index": 266,
+        "shoot": 1,
+        "total time": 6.346561908721924
+    },
+    {
+        "identifier": "03-00-019",
+        "index": 267,
+        "shoot": 1,
+        "total time": 6.306815147399902
+    },
+    {
+        "identifier": "03-00-018",
+        "index": 268,
+        "shoot": 1,
+        "total time": 5.656399488449097
+    },
+    {
+        "identifier": "03-00-017",
+        "index": 269,
+        "shoot": 1,
+        "total time": 5.603108882904053
+    },
+    {
+        "identifier": "03-00-016",
+        "index": 270,
+        "shoot": 1,
+        "total time": 6.256999254226685
+    },
+    {
+        "identifier": "03-00-015",
+        "index": 271,
+        "shoot": 1,
+        "total time": 5.975732803344727
+    },
+    {
+        "identifier": "03-00-014",
+        "index": 272,
+        "shoot": 8,
+        "total time": 171.15029859542847
+    },
+    {
+        "identifier": "03-00-013",
+        "index": 273,
+        "shoot": 1,
+        "total time": 6.591244220733643
+    },
+    {
+        "identifier": "03-00-012",
+        "index": 274,
+        "shoot": 1,
+        "total time": 5.712557792663574
+    },
+    {
+        "identifier": "03-00-011",
+        "index": 275,
+        "shoot": 1,
+        "total time": 6.3349902629852295
+    },
+    {
+        "identifier": "03-00-010",
+        "index": 276,
+        "shoot": 1,
+        "total time": 6.045649528503418
+    },
+    {
+        "identifier": "03-00-09",
+        "index": 277,
+        "shoot": 1,
+        "total time": 6.423912525177002
+    },
+    {
+        "identifier": "03-00-08",
+        "index": 278,
+        "shoot": 1,
+        "total time": 6.250427484512329
+    },
+    {
+        "identifier": "03-00-07",
+        "index": 279,
+        "shoot": 1,
+        "total time": 5.902428865432739
+    },
+    {
+        "identifier": "03-00-06",
+        "index": 280,
+        "shoot": 1,
+        "total time": 13.310105085372925
+    },
+    {
+        "identifier": "03-00-05",
+        "index": 281,
+        "shoot": 1,
+        "total time": 6.319152593612671
+    },
+    {
+        "identifier": "03-00-04",
+        "index": 282,
+        "shoot": 1,
+        "total time": 7.640645265579224
+    },
+    {
+        "identifier": "03-00-03",
+        "index": 283,
+        "shoot": 1,
+        "total time": 7.075293302536011
+    },
+    {
+        "identifier": "03-00-02",
+        "index": 284,
+        "shoot": 1,
+        "total time": 7.194745063781738
+    },
+    {
+        "identifier": "04-00-01",
+        "index": 285,
+        "shoot": 1,
+        "total time": 8.58244013786316
+    },
+    {
+        "identifier": "04-00-02",
+        "index": 286,
+        "shoot": 1,
+        "total time": 7.250761032104492
+    },
+    {
+        "identifier": "04-00-03",
+        "index": 287,
+        "shoot": 1,
+        "total time": 6.754568338394165
+    },
+    {
+        "identifier": "04-00-04",
+        "index": 288,
+        "shoot": 1,
+        "total time": 7.329021215438843
+    },
+    {
+        "identifier": "04-00-05",
+        "index": 289,
+        "shoot": 1,
+        "total time": 7.276946544647217
+    },
+    {
+        "identifier": "04-00-06",
+        "index": 290,
+        "shoot": 1,
+        "total time": 8.560844421386719
+    },
+    {
+        "identifier": "04-00-07",
+        "index": 291,
+        "shoot": 1,
+        "total time": 8.39441990852356
+    },
+    {
+        "identifier": "04-00-08",
+        "index": 292,
+        "shoot": 1,
+        "total time": 8.653722524642944
+    },
+    {
+        "identifier": "04-00-09",
+        "index": 293,
+        "shoot": 1,
+        "total time": 9.482639074325562
+    },
+    {
+        "identifier": "04-00-010",
+        "index": 294,
+        "shoot": 1,
+        "total time": 9.086945533752441
+    },
+    {
+        "identifier": "04-00-011",
+        "index": 295,
+        "shoot": 1,
+        "total time": 8.773348093032837
+    },
+    {
+        "identifier": "04-00-012",
+        "index": 296,
+        "shoot": 1,
+        "total time": 8.862825870513916
+    },
+    {
+        "identifier": "04-00-013",
+        "index": 297,
+        "shoot": 1,
+        "total time": 9.652617931365967
+    },
+    {
+        "identifier": "04-00-014",
+        "index": 298,
+        "shoot": 1,
+        "total time": 9.492908477783203
+    },
+    {
+        "identifier": "04-00-015",
+        "index": 299,
+        "shoot": 1,
+        "total time": 10.336193799972534
+    },
+    {
+        "identifier": "04-00-016",
+        "index": 300,
+        "shoot": 1,
+        "total time": 10.80272889137268
+    },
+    {
+        "identifier": "04-00-017",
+        "index": 301,
+        "shoot": 1,
+        "total time": 10.07039213180542
+    },
+    {
+        "identifier": "04-00-018",
+        "index": 302,
+        "shoot": 1,
+        "total time": 10.441871643066406
+    },
+    {
+        "identifier": "04-00-019",
+        "index": 303,
+        "shoot": 1,
+        "total time": 10.971367359161377
+    },
+    {
+        "identifier": "04-00-020",
+        "index": 304,
+        "shoot": 1,
+        "total time": 13.961516618728638
+    },
+    {
+        "identifier": "04-00-021",
+        "index": 305,
+        "shoot": 1,
+        "total time": 11.324565172195435
+    },
+    {
+        "identifier": "04-00-022",
+        "index": 306,
+        "shoot": 1,
+        "total time": 12.096856355667114
+    },
+    {
+        "identifier": "04-00-023",
+        "index": 307,
+        "shoot": 1,
+        "total time": 13.430495738983154
+    },
+    {
+        "identifier": "04-00-024",
+        "index": 308,
+        "shoot": 1,
+        "total time": 15.18735146522522
+    },
+    {
+        "identifier": "04-00-025",
+        "index": 309,
+        "shoot": 1,
+        "total time": 14.033929824829102
+    },
+    {
+        "identifier": "04-00-026",
+        "index": 310,
+        "shoot": 1,
+        "total time": 11.496515035629272
+    },
+    {
+        "identifier": "03-00-025",
+        "index": 311,
+        "shoot": 1,
+        "total time": 1.8173446655273438
+    },
+    {
+        "identifier": "04-00-027",
+        "index": 312,
+        "shoot": 1,
+        "total time": 7.677078247070312e-05
+    },
+    {
+        "identifier": "04-00-028",
+        "index": 313,
+        "shoot": 1,
+        "total time": 5.903265714645386
+    },
+    {
+        "identifier": "04-00-029",
+        "index": 314,
+        "shoot": 1,
+        "total time": 5.49880838394165
+    },
+    {
+        "identifier": "04-00-030",
+        "index": 315,
+        "shoot": 1,
+        "total time": 6.92808985710144
+    },
+    {
+        "identifier": "04-00-031",
+        "index": 316,
+        "shoot": 1,
+        "total time": 12.427239894866943
+    },
+    {
+        "identifier": "04-00-032",
+        "index": 317,
+        "shoot": 1,
+        "total time": 6.902200222015381
+    },
+    {
+        "identifier": "04-00-033",
+        "index": 318,
+        "shoot": 1,
+        "total time": 6.783450603485107
+    },
+    {
+        "identifier": "04-00-034",
+        "index": 319,
+        "shoot": 1,
+        "total time": 16.554587841033936
+    },
+    {
+        "identifier": "04-00-035",
+        "index": 320,
+        "shoot": 1,
+        "total time": 7.096969366073608
+    },
+    {
+        "identifier": "04-00-036",
+        "index": 321,
+        "shoot": 1,
+        "total time": 7.21063232421875
+    },
+    {
+        "identifier": "04-00-037",
+        "index": 322,
+        "shoot": 1,
+        "total time": 5.3706443309783936
+    },
+    {
+        "identifier": "04-00-038",
+        "index": 323,
+        "shoot": 1,
+        "total time": 7.346909046173096
+    },
+    {
+        "identifier": "04-00-039",
+        "index": 324,
+        "shoot": 1,
+        "total time": 7.12174916267395
+    },
+    {
+        "identifier": "04-00-040",
+        "index": 325,
+        "shoot": 1,
+        "total time": 7.875212669372559
+    },
+    {
+        "identifier": "04-00-041",
+        "index": 326,
+        "shoot": 1,
+        "total time": 8.33089566230774
+    },
+    {
+        "identifier": "04-00-042",
+        "index": 327,
+        "shoot": 1,
+        "total time": 8.762486934661865
+    },
+    {
+        "identifier": "04-00-043",
+        "index": 328,
+        "shoot": 1,
+        "total time": 8.831698656082153
+    },
+    {
+        "identifier": "04-00-044",
+        "index": 329,
+        "shoot": 1,
+        "total time": 8.123418807983398
+    },
+    {
+        "identifier": "04-00-045",
+        "index": 330,
+        "shoot": 1,
+        "total time": 8.20740795135498
+    },
+    {
+        "identifier": "04-00-046",
+        "index": 331,
+        "shoot": 1,
+        "total time": 9.52055311203003
+    },
+    {
+        "identifier": "04-00-047",
+        "index": 332,
+        "shoot": 1,
+        "total time": 10.236124038696289
+    },
+    {
+        "identifier": "04-00-048",
+        "index": 333,
+        "shoot": 1,
+        "total time": 9.256046295166016
+    },
+    {
+        "identifier": "04-00-049",
+        "index": 334,
+        "shoot": 1,
+        "total time": 9.751930952072144
+    },
+    {
+        "identifier": "04-00-050",
+        "index": 335,
+        "shoot": 1,
+        "total time": 10.959999561309814
+    },
+    {
+        "identifier": "04-00-051",
+        "index": 336,
+        "shoot": 1,
+        "total time": 9.981554985046387
+    },
+    {
+        "identifier": "04-00-052",
+        "index": 337,
+        "shoot": 1,
+        "total time": 11.182725667953491
+    },
+    {
+        "identifier": "04-00-053",
+        "index": 338,
+        "shoot": 1,
+        "total time": 10.975207328796387
+    },
+    {
+        "identifier": "04-00-054",
+        "index": 339,
+        "shoot": 1,
+        "total time": 11.82956838607788
+    },
+    {
+        "identifier": "04-00-055",
+        "index": 340,
+        "shoot": 1,
+        "total time": 11.162973165512085
+    },
+    {
+        "identifier": "04-00-056",
+        "index": 341,
+        "shoot": 1,
+        "total time": 12.548236608505249
+    },
+    {
+        "identifier": "04-00-057",
+        "index": 342,
+        "shoot": 1,
+        "total time": 12.904829978942871
+    },
+    {
+        "identifier": "05-00-056",
+        "index": 343,
+        "shoot": 1,
+        "total time": 11.934284210205078
+    },
+    {
+        "identifier": "05-00-055",
+        "index": 344,
+        "shoot": 1,
+        "total time": 12.654417037963867
+    },
+    {
+        "identifier": "05-00-054",
+        "index": 345,
+        "shoot": 1,
+        "total time": 14.470458507537842
+    },
+    {
+        "identifier": "05-00-053",
+        "index": 346,
+        "shoot": 1,
+        "total time": 12.316869497299194
+    },
+    {
+        "identifier": "05-00-052",
+        "index": 347,
+        "shoot": 1,
+        "total time": 14.479697465896606
+    },
+    {
+        "identifier": "05-00-051",
+        "index": 348,
+        "shoot": 1,
+        "total time": 15.936732292175293
+    },
+    {
+        "identifier": "05-00-050",
+        "index": 349,
+        "shoot": 1,
+        "total time": 15.7161705493927
+    },
+    {
+        "identifier": "05-00-049",
+        "index": 350,
+        "shoot": 1,
+        "total time": 17.91503643989563
+    },
+    {
+        "identifier": "05-00-048",
+        "index": 351,
+        "shoot": 1,
+        "total time": 16.621668815612793
+    },
+    {
+        "identifier": "05-00-047",
+        "index": 352,
+        "shoot": 1,
+        "total time": 19.297837018966675
+    },
+    {
+        "identifier": "05-00-046",
+        "index": 353,
+        "shoot": 1,
+        "total time": 16.520678758621216
+    },
+    {
+        "identifier": "05-00-045",
+        "index": 354,
+        "shoot": 1,
+        "total time": 18.824506521224976
+    },
+    {
+        "identifier": "05-00-044",
+        "index": 355,
+        "shoot": 1,
+        "total time": 19.19235134124756
+    },
+    {
+        "identifier": "05-00-043",
+        "index": 356,
+        "shoot": 1,
+        "total time": 20.106671810150146
+    },
+    {
+        "identifier": "05-00-042",
+        "index": 357,
+        "shoot": 1,
+        "total time": 17.059722423553467
+    },
+    {
+        "identifier": "05-00-041",
+        "index": 358,
+        "shoot": 1,
+        "total time": 22.349668502807617
+    },
+    {
+        "identifier": "05-00-040",
+        "index": 359,
+        "shoot": 1,
+        "total time": 19.598760843276978
+    },
+    {
+        "identifier": "05-00-039",
+        "index": 360,
+        "shoot": 1,
+        "total time": 20.54516339302063
+    },
+    {
+        "identifier": "05-00-038",
+        "index": 361,
+        "shoot": 1,
+        "total time": 23.671671390533447
+    },
+    {
+        "identifier": "04-00-027",
+        "index": 362,
+        "shoot": 1,
+        "total time": 0.9398167133331299
+    },
+    {
+        "identifier": "05-00-037",
+        "index": 363,
+        "shoot": 1,
+        "total time": 7.605552673339844e-05
+    },
+    {
+        "identifier": "05-00-036",
+        "index": 364,
+        "shoot": 1,
+        "total time": 5.495407342910767
+    },
+    {
+        "identifier": "05-00-035",
+        "index": 365,
+        "shoot": 1,
+        "total time": 5.093331575393677
+    },
+    {
+        "identifier": "05-00-034",
+        "index": 366,
+        "shoot": 1,
+        "total time": 5.654297351837158
+    },
+    {
+        "identifier": "05-00-033",
+        "index": 367,
+        "shoot": 1,
+        "total time": 5.122266530990601
+    },
+    {
+        "identifier": "05-00-032",
+        "index": 368,
+        "shoot": 1,
+        "total time": 5.478762865066528
+    },
+    {
+        "identifier": "05-00-031",
+        "index": 369,
+        "shoot": 1,
+        "total time": 5.6168458461761475
+    },
+    {
+        "identifier": "05-00-030",
+        "index": 370,
+        "shoot": 1,
+        "total time": 5.5878424644470215
+    },
+    {
+        "identifier": "05-00-029",
+        "index": 371,
+        "shoot": 1,
+        "total time": 5.692888975143433
+    },
+    {
+        "identifier": "05-00-028",
+        "index": 372,
+        "shoot": 1,
+        "total time": 5.5134687423706055
+    },
+    {
+        "identifier": "05-00-027",
+        "index": 373,
+        "shoot": 1,
+        "total time": 5.853232145309448
+    },
+    {
+        "identifier": "05-00-026",
+        "index": 374,
+        "shoot": 1,
+        "total time": 5.906023979187012
+    },
+    {
+        "identifier": "05-00-025",
+        "index": 375,
+        "shoot": 1,
+        "total time": 5.560986280441284
+    },
+    {
+        "identifier": "05-00-024",
+        "index": 376,
+        "shoot": 1,
+        "total time": 5.600458860397339
+    },
+    {
+        "identifier": "05-00-023",
+        "index": 377,
+        "shoot": 1,
+        "total time": 6.275007486343384
+    },
+    {
+        "identifier": "05-00-022",
+        "index": 378,
+        "shoot": 1,
+        "total time": 5.913125038146973
+    },
+    {
+        "identifier": "05-00-021",
+        "index": 379,
+        "shoot": 1,
+        "total time": 7.903375625610352
+    },
+    {
+        "identifier": "05-00-020",
+        "index": 380,
+        "shoot": 1,
+        "total time": 6.2636635303497314
+    },
+    {
+        "identifier": "05-00-019",
+        "index": 381,
+        "shoot": 1,
+        "total time": 5.964618921279907
+    },
+    {
+        "identifier": "05-00-018",
+        "index": 382,
+        "shoot": 1,
+        "total time": 5.883866310119629
+    },
+    {
+        "identifier": "05-00-017",
+        "index": 383,
+        "shoot": 1,
+        "total time": 5.94282341003418
+    },
+    {
+        "identifier": "05-00-016",
+        "index": 384,
+        "shoot": 1,
+        "total time": 6.540436267852783
+    },
+    {
+        "identifier": "05-00-015",
+        "index": 385,
+        "shoot": 1,
+        "total time": 6.243109464645386
+    },
+    {
+        "identifier": "05-00-014",
+        "index": 386,
+        "shoot": 1,
+        "total time": 10.629963636398315
+    },
+    {
+        "identifier": "05-00-013",
+        "index": 387,
+        "shoot": 1,
+        "total time": 6.09804892539978
+    },
+    {
+        "identifier": "05-00-012",
+        "index": 388,
+        "shoot": 1,
+        "total time": 6.8215553760528564
+    },
+    {
+        "identifier": "05-00-011",
+        "index": 389,
+        "shoot": 1,
+        "total time": 5.943495035171509
+    },
+    {
+        "identifier": "05-00-010",
+        "index": 390,
+        "shoot": 1,
+        "total time": 6.4489686489105225
+    },
+    {
+        "identifier": "05-00-09",
+        "index": 391,
+        "shoot": 1,
+        "total time": 6.0725181102752686
+    },
+    {
+        "identifier": "05-00-08",
+        "index": 392,
+        "shoot": 1,
+        "total time": 8.078169822692871
+    },
+    {
+        "identifier": "05-00-07",
+        "index": 393,
+        "shoot": 1,
+        "total time": 7.949853181838989
+    },
+    {
+        "identifier": "05-00-06",
+        "index": 394,
+        "shoot": 1,
+        "total time": 6.6681883335113525
+    },
+    {
+        "identifier": "05-00-05",
+        "index": 395,
+        "shoot": 1,
+        "total time": 6.630411148071289
+    },
+    {
+        "identifier": "05-00-04",
+        "index": 396,
+        "shoot": 1,
+        "total time": 7.541590452194214
+    },
+    {
+        "identifier": "05-00-03",
+        "index": 397,
+        "shoot": 1,
+        "total time": 7.555469751358032
+    },
+    {
+        "identifier": "05-00-02",
+        "index": 398,
+        "shoot": 1,
+        "total time": 7.762516975402832
+    },
+    {
+        "identifier": "06-00-01",
+        "index": 399,
+        "shoot": 1,
+        "total time": 11.19392704963684
+    },
+    {
+        "identifier": "06-00-02",
+        "index": 400,
+        "shoot": 1,
+        "total time": 9.008659362792969
+    },
+    {
+        "identifier": "06-00-03",
+        "index": 401,
+        "shoot": 1,
+        "total time": 7.298274993896484
+    },
+    {
+        "identifier": "06-00-04",
+        "index": 402,
+        "shoot": 1,
+        "total time": 9.170030117034912
+    },
+    {
+        "identifier": "06-00-05",
+        "index": 403,
+        "shoot": 1,
+        "total time": 8.299566507339478
+    },
+    {
+        "identifier": "06-00-06",
+        "index": 404,
+        "shoot": 1,
+        "total time": 13.08589220046997
+    },
+    {
+        "identifier": "06-00-07",
+        "index": 405,
+        "shoot": 1,
+        "total time": 15.96373963356018
+    },
+    {
+        "identifier": "06-00-08",
+        "index": 406,
+        "shoot": 1,
+        "total time": 12.636305093765259
+    },
+    {
+        "identifier": "06-00-09",
+        "index": 407,
+        "shoot": 1,
+        "total time": 11.114286422729492
+    },
+    {
+        "identifier": "06-00-010",
+        "index": 408,
+        "shoot": 1,
+        "total time": 11.139143705368042
+    },
+    {
+        "identifier": "06-00-011",
+        "index": 409,
+        "shoot": 1,
+        "total time": 12.48425579071045
+    },
+    {
+        "identifier": "06-00-012",
+        "index": 410,
+        "shoot": 1,
+        "total time": 22.629791021347046
+    },
+    {
+        "identifier": "06-00-013",
+        "index": 411,
+        "shoot": 1,
+        "total time": 12.687873840332031
+    },
+    {
+        "identifier": "06-00-014",
+        "index": 412,
+        "shoot": 1,
+        "total time": 15.733113288879395
+    },
+    {
+        "identifier": "05-00-037",
+        "index": 413,
+        "shoot": 1,
+        "total time": 0.9045238494873047
+    },
+    {
+        "identifier": "06-00-015",
+        "index": 414,
+        "shoot": 1,
+        "total time": 7.581710815429688e-05
+    },
+    {
+        "identifier": "06-00-016",
+        "index": 415,
+        "shoot": 1,
+        "total time": 5.691027641296387
+    },
+    {
+        "identifier": "06-00-017",
+        "index": 416,
+        "shoot": 2,
+        "total time": 15.639651775360107
+    },
+    {
+        "identifier": "06-00-018",
+        "index": 417,
+        "shoot": 2,
+        "total time": 42.97681379318237
+    },
+    {
+        "identifier": "06-00-019",
+        "index": 418,
+        "shoot": 2,
+        "total time": 10.165072441101074
+    },
+    {
+        "identifier": "06-00-020",
+        "index": 419,
+        "shoot": 2,
+        "total time": 15.246839046478271
+    },
+    {
+        "identifier": "06-00-021",
+        "index": 420,
+        "shoot": 2,
+        "total time": 14.300187349319458
+    },
+    {
+        "identifier": "06-00-022",
+        "index": 421,
+        "shoot": 5,
+        "total time": 50.02515363693237
+    },
+    {
+        "identifier": "06-00-023",
+        "index": 422,
+        "shoot": 1,
+        "total time": 8.53059720993042
+    },
+    {
+        "identifier": "06-00-024",
+        "index": 423,
+        "shoot": 1,
+        "total time": 6.120082855224609
+    },
+    {
+        "identifier": "06-00-025",
+        "index": 424,
+        "shoot": 1,
+        "total time": 7.465799570083618
+    },
+    {
+        "identifier": "06-00-026",
+        "index": 425,
+        "shoot": 1,
+        "total time": 7.637541770935059
+    },
+    {
+        "identifier": "06-00-027",
+        "index": 426,
+        "shoot": 1,
+        "total time": 14.32286262512207
+    },
+    {
+        "identifier": "06-00-028",
+        "index": 427,
+        "shoot": 1,
+        "total time": 8.93858027458191
+    },
+    {
+        "identifier": "06-00-029",
+        "index": 428,
+        "shoot": 1,
+        "total time": 7.419510364532471
+    },
+    {
+        "identifier": "06-00-030",
+        "index": 429,
+        "shoot": 1,
+        "total time": 7.856820583343506
+    },
+    {
+        "identifier": "06-00-031",
+        "index": 430,
+        "shoot": 1,
+        "total time": 7.876015663146973
+    },
+    {
+        "identifier": "06-00-032",
+        "index": 431,
+        "shoot": 1,
+        "total time": 8.274203300476074
+    },
+    {
+        "identifier": "06-00-033",
+        "index": 432,
+        "shoot": 1,
+        "total time": 6.169335603713989
+    },
+    {
+        "identifier": "06-00-034",
+        "index": 433,
+        "shoot": 1,
+        "total time": 7.822119474411011
+    },
+    {
+        "identifier": "06-00-035",
+        "index": 434,
+        "shoot": 1,
+        "total time": 9.00086760520935
+    },
+    {
+        "identifier": "06-00-036",
+        "index": 435,
+        "shoot": 1,
+        "total time": 9.862508773803711
+    },
+    {
+        "identifier": "06-00-037",
+        "index": 436,
+        "shoot": 1,
+        "total time": 8.26697039604187
+    },
+    {
+        "identifier": "06-00-038",
+        "index": 437,
+        "shoot": 1,
+        "total time": 16.79853105545044
+    },
+    {
+        "identifier": "06-00-039",
+        "index": 438,
+        "shoot": 1,
+        "total time": 7.612459897994995
+    },
+    {
+        "identifier": "06-00-040",
+        "index": 439,
+        "shoot": 1,
+        "total time": 9.61352014541626
+    },
+    {
+        "identifier": "06-00-041",
+        "index": 440,
+        "shoot": 1,
+        "total time": 9.076261281967163
+    },
+    {
+        "identifier": "06-00-042",
+        "index": 441,
+        "shoot": 1,
+        "total time": 22.764820098876953
+    },
+    {
+        "identifier": "06-00-043",
+        "index": 442,
+        "shoot": 1,
+        "total time": 6.906966209411621
+    },
+    {
+        "identifier": "06-00-044",
+        "index": 443,
+        "shoot": 1,
+        "total time": 8.291155576705933
+    },
+    {
+        "identifier": "06-00-045",
+        "index": 444,
+        "shoot": 1,
+        "total time": 8.92980146408081
+    },
+    {
+        "identifier": "06-00-046",
+        "index": 445,
+        "shoot": 1,
+        "total time": 7.0740745067596436
+    },
+    {
+        "identifier": "06-00-047",
+        "index": 446,
+        "shoot": 1,
+        "total time": 9.050132751464844
+    },
+    {
+        "identifier": "06-00-048",
+        "index": 447,
+        "shoot": 1,
+        "total time": 9.377254724502563
+    },
+    {
+        "identifier": "06-00-049",
+        "index": 448,
+        "shoot": 1,
+        "total time": 9.664021253585815
+    },
+    {
+        "identifier": "06-00-050",
+        "index": 449,
+        "shoot": 1,
+        "total time": 11.041029930114746
+    },
+    {
+        "identifier": "06-00-051",
+        "index": 450,
+        "shoot": 1,
+        "total time": 10.117071628570557
+    },
+    {
+        "identifier": "06-00-052",
+        "index": 451,
+        "shoot": 1,
+        "total time": 12.481260538101196
+    },
+    {
+        "identifier": "06-00-053",
+        "index": 452,
+        "shoot": 1,
+        "total time": 14.814772605895996
+    },
+    {
+        "identifier": "06-00-054",
+        "index": 453,
+        "shoot": 1,
+        "total time": 16.359658002853394
+    },
+    {
+        "identifier": "06-00-055",
+        "index": 454,
+        "shoot": 1,
+        "total time": 12.756986379623413
+    },
+    {
+        "identifier": "06-00-056",
+        "index": 455,
+        "shoot": 1,
+        "total time": 13.939226865768433
+    },
+    {
+        "identifier": "06-00-057",
+        "index": 456,
+        "shoot": 2,
+        "total time": 33.22351861000061
+    },
+    {
+        "identifier": "07-00-056",
+        "index": 457,
+        "shoot": 1,
+        "total time": 18.235868453979492
+    },
+    {
+        "identifier": "07-00-055",
+        "index": 458,
+        "shoot": 1,
+        "total time": 24.50647521018982
+    },
+    {
+        "identifier": "07-00-054",
+        "index": 459,
+        "shoot": 1,
+        "total time": 20.10234260559082
+    },
+    {
+        "identifier": "07-00-053",
+        "index": 460,
+        "shoot": 1,
+        "total time": 22.995200395584106
+    },
+    {
+        "identifier": "07-00-052",
+        "index": 461,
+        "shoot": 1,
+        "total time": 23.19276452064514
+    },
+    {
+        "identifier": "07-00-051",
+        "index": 462,
+        "shoot": 1,
+        "total time": 23.662921667099
+    },
+    {
+        "identifier": "07-00-050",
+        "index": 463,
+        "shoot": 1,
+        "total time": 30.484591245651245
+    }
+]
